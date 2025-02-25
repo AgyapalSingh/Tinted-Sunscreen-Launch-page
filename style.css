@@ -69,6 +69,42 @@
   text-align: center;
 }
 
+
+
+
+.uniq-TS-Scroll-Message{
+  width: 15px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px
+}
+
+.uniq-TS-Scroll-Message p{
+  font-size: 10px;
+  font-family: "Poppins";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #183457;
+}
+
+.uniq-TS-Scroll-Message p span{
+  margin-top: -5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -143,4 +179,5 @@
 .extra-scroll {
   height: 100vh;
   background-color: #dbe1ff;
+  align-items: center;
 }

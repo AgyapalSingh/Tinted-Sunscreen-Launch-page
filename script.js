@@ -1,8 +1,8 @@
 // DESKTOP       ===================================================================================================================================================
 
 var tl_TS_Product_M = gsap.timeline();
+var tl_TS_Product_M_2 = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
-
 
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
 const context_1_m = canvas_1_m.getContext("2d");
@@ -74,3 +74,77 @@ function startAnimation_m() {
 }
 
 preloadImages_1_m();
+
+
+
+
+
+const canvas_2_m = document.querySelector("#uniq-TS-frame_2_m");
+const context_2_m = canvas_2_m.getContext("2d");
+
+const frames_2_m = {
+  currentIndex_2: 0,
+  maxIndex_2: 65,
+};
+
+let imagesLoaded_2_m = 0;
+const images_2_m = [];
+
+function preloadImages_2_m() {
+  for (var i = 0; i < frames_2_m.maxIndex_2; i++) {
+    const imageUrl_2_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
+      .toString()
+      .padStart(3, "0")}.png?v=1737009142`;
+    const img_2_m = new Image();
+
+    img_2_m.src = imageUrl_2_m;
+    img_2_m.onload = () => {
+      imagesLoaded_2_m++;
+      if (imagesLoaded_2_m === frames_2_m.maxIndex_2) {
+        loadImage_2_m(frames_2_m.currentIndex_2);
+        startAnimation_2_m();
+      }
+    };
+    images_2_m.push(img_2_m);
+  }
+}
+
+function loadImage_2_m(index) {
+  if (index >= 0 && index < frames_2_m.maxIndex_2) {
+    const img_2_m = images_2_m[index];
+    canvas_2_m.width = 300;
+    canvas_2_m.height = 500;
+    const scaleX_2_m = canvas_2_m.width / img_2_m.width;
+    const scaleY_2_m = canvas_2_m.height / img_2_m.height;
+    const scale_2_m = Math.max(scaleX_2_m, scaleY_2_m);
+    const newWidth_2_m = img_2_m.width * scale_2_m;
+    const newHeight_2_m = img_2_m.height * scale_2_m;
+    const offsetX_2_m = (canvas_2_m.width - newWidth_2_m) / 2;
+    const offsetY_2_m = (canvas_2_m.height - newHeight_2_m) / 2;
+    context_2_m.clearRect(0, 0, canvas_2_m.width, canvas_2_m.height);
+    context_2_m.imageSmoothingEnabled = true;
+    context_2_m.imageSmoothingQuality = "high";
+    context_2_m.drawImage(img_2_m, offsetX_2_m, offsetY_2_m, 300, 500);
+    frames_2_m.currentIndex_2 = index;
+  }
+}
+
+function startAnimation_2_m() {
+  tl_TS_Product_M_2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".uniq-TS-product-image-m-2 ",
+      start: "top 45%",
+      end: "top 10%",
+      scrub: 1,
+    },
+  });
+
+  tl_TS_Product_M_2.to(frames_2_m, {
+    currentIndex_2: frames_2_m.maxIndex_2,
+    onUpdate: function () {
+      loadImage_2_m(Math.floor(frames_2_m.currentIndex_2));
+    },
+  });
+}
+
+preloadImages_2_m();

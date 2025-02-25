@@ -40,7 +40,6 @@
     background-color: #dbe1ff;
 }
 
-
 .uniq-TS-title-m{
     display: flex;
     flex-direction: column;
@@ -49,18 +48,17 @@
 }
 
 .uniq-TS-title-text-m{
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     width: 80vw;
     align-items: center;
     justify-content: center;
     font-family: "Poppins";
-    border: 1px solid red;
     position: sticky;
     top: -10%;
+    background-color: #dbe1ff;
 }
-
 
 .uniq-TS-title-text-m h1{
     font-size: 90px;

@@ -71,6 +71,55 @@
     text-align: center;
 }
 
+.uniq-TS-product-container-m{
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+#uniq-TS-frame_1_m{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 15%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .extra-scroll{
     height: 100vh;
 }

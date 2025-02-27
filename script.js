@@ -22,7 +22,7 @@ tl_TS_Hook_M.to(".title-part-Hook-2", {
   scale: 1.5,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
-    start: "top 0%",
+    start: "top 1%",
     end: "top -15%",
     scrub: 1,
   },
@@ -32,7 +32,7 @@ tl_TS_Hook_M.to(".title-part-Hook-2", {
   opacity: 0,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
-    start: "top -15%",
+    start: "top -16%",
     end: "top -20%",
     scrub: 1,
   },
@@ -44,7 +44,7 @@ tl_TS_Hook_M.to(".title-part-Hook-3", {
   scale: 1.5,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
-    start: "top -20%",
+    start: "top -21%",
     end: "top -35%",
     scrub: 1,
   },
@@ -56,7 +56,7 @@ tl_TS_Hook_M.to(".title-part-Hook-3", {
   opacity: 0,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
-    start: "top -35%",
+    start: "top -36%",
     end: "top -40%",
     scrub: 1,
   },
@@ -67,8 +67,8 @@ tl_TS_Hook_M.to(".title-part-Hook-4", {
   scale: 1.5,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
-    start: "top -35%",
-    end: "top -50%",
+    start: "top -41%",
+    end: "top -55%",
     scrub: 1,
   },
 });
@@ -79,8 +79,8 @@ tl_TS_Hook_M.to(".title-part-Hook-4", {
   opacity: 0,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
-    start: "top -50%",
-    end: "top -55%",
+    start: "top -56%",
+    end: "top -60%",
     scrub: 1,
   },
 });

@@ -87,11 +87,26 @@
 }
 
 .uniq-TS-Scroll-Message {
-  width: 15px;
+  width: 14px;
+  background-color: #dbe1ff;
+  border-radius: 20px;
+  padding: 15px 0;
   position: fixed;
   bottom: 20px;
   right: 20px;
+  animation: scrollUpDown 3s ease-in-out infinite;
 }
+
+@keyframes scrollUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 
 .uniq-TS-Scroll-Message p {
   font-size: 10px;
@@ -114,6 +129,7 @@
 
 .uniq-TS-launch-page-container-m {
   background-color: #dbe1ff;
+  scroll-behavior: smooth;
 }
 
 .uniq-TS-Hook-m {

@@ -16,7 +16,7 @@
   color: white;
 }
 
-.uniq-TS-Developer h1 a{
+.uniq-TS-Developer h1 a {
   text-decoration: none;
   color: white;
   border-bottom: 1px solid white;
@@ -86,17 +86,14 @@
   text-align: center;
 }
 
-
-
-
-.uniq-TS-Scroll-Message{
+.uniq-TS-Scroll-Message {
   width: 15px;
   position: fixed;
   bottom: 20px;
-  right: 20px
+  right: 20px;
 }
 
-.uniq-TS-Scroll-Message p{
+.uniq-TS-Scroll-Message p {
   font-size: 10px;
   font-family: "Poppins";
   display: flex;
@@ -105,22 +102,9 @@
   color: #183457;
 }
 
-.uniq-TS-Scroll-Message p span{
+.uniq-TS-Scroll-Message p span {
   margin-top: -5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 * {
   margin: 0;
@@ -131,6 +115,69 @@
 .uniq-TS-launch-page-container-m {
   background-color: #dbe1ff;
 }
+
+.uniq-TS-Hook-m {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+}
+
+.uniq-TS-Hook-text-m {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+}
+
+.uniq-TS-Hook-text-m h1 {
+  font-size: 90px;
+  font-weight: 300;
+  font-family: "Poppins";
+}
+
+.title-part-Hook-1 {
+  z-index: 10;
+}
+
+.title-part-Hook-2 {
+  opacity: 0;
+}
+
+.title-part-Hook-3 {
+  opacity: 0;
+}
+.title-part-Hook-4 {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .uniq-TS-title-m {
   display: flex;
@@ -199,8 +246,6 @@
   align-items: center;
 }
 
-
-
 /* Canvas 3 */
 
 .uniq-TS-product-container-m-3 {
@@ -216,5 +261,3 @@
   position: sticky;
   top: 15%;
 }
-
-

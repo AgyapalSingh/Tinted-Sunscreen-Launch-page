@@ -1,10 +1,117 @@
-// DESKTOP       ===================================================================================================================================================
+// Mobile     ===================================================================================================================================================
 
+var tl_TS_Hook_M = gsap.timeline();
 var tl_TS_Product_M = gsap.timeline();
 var tl_TS_Product_M_2 = gsap.timeline();
 var tl_TS_Product_M_3 = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
+tl_TS_Hook_M.to(".title-part-Hook-1", {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".uniq-TS-Hook-m ",
+    start: "top 5%",
+    end: "top 0%",
+    scrub: 1,
+  },
+});
+
+tl_TS_Hook_M.to(".title-part-Hook-2", {
+  opacity: 1,
+  scale: 1,
+  scrollTrigger: {
+    trigger: ".uniq-TS-Hook-m ",
+    start: "top 0%",
+    end: "top -15%",
+    scrub: 1,
+  },
+});
+
+tl_TS_Hook_M.to(".title-part-Hook-2", {
+  opacity: 0,
+  scale: 1,
+  scrollTrigger: {
+    trigger: ".uniq-TS-Hook-m ",
+    start: "top -15%",
+    end: "top -20%",
+    scrub: 1,
+  },
+});
+
+
+tl_TS_Hook_M.to(".title-part-Hook-3", {
+  opacity: 1,
+  scale: 1,
+  scrollTrigger: {
+    trigger: ".uniq-TS-Hook-m ",
+    start: "top -20%",
+    end: "top -35%",
+    scrub: 1,
+  },
+});
+
+
+
+tl_TS_Hook_M.to(".title-part-Hook-3", {
+  opacity: 0,
+  scale: 1,
+  scrollTrigger: {
+    trigger: ".uniq-TS-Hook-m ",
+    start: "top -35%",
+    end: "top -40%",
+    scrub: 1,
+  },
+});
+
+tl_TS_Hook_M.to(".title-part-Hook-4", {
+  opacity: 1,
+  scale: 1,
+  scrollTrigger: {
+    trigger: ".uniq-TS-Hook-m ",
+    start: "top -35%",
+    end: "top -50%",
+    scrub: 1,
+  },
+});
+
+
+
+tl_TS_Hook_M.to(".title-part-Hook-4", {
+  opacity: 0,
+  scale: 1,
+  scrollTrigger: {
+    trigger: ".uniq-TS-Hook-m ",
+    start: "top -50%",
+    end: "top -55%",
+    scrub: 1,
+  },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  CANVAS 1
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
 const context_1_m = canvas_1_m.getContext("2d");
 
@@ -15,7 +122,6 @@ const frames_1_m = {
 
 let imagesLoaded_1_m = 0;
 const images_1_m = [];
-
 function preloadImages_1_m() {
   for (var i = 0; i < frames_1_m.maxIndex_1; i++) {
     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
@@ -62,10 +168,8 @@ function startAnimation_m() {
       start: "top 45%",
       end: "top 10%",
       scrub: 1,
-    //   markers: true,
     },
   });
-
   tl_TS_Product_M.to(frames_1_m, {
     currentIndex_1: frames_1_m.maxIndex_1,
     onUpdate: function () {
@@ -75,8 +179,6 @@ function startAnimation_m() {
 }
 
 preloadImages_1_m();
-
-
 
 // CANVAS 2
 
@@ -139,7 +241,6 @@ function startAnimation_2_m() {
       scrub: 1,
     },
   });
-
   tl_TS_Product_M_2.to(frames_2_m, {
     currentIndex_2: frames_2_m.maxIndex_2,
     onUpdate: function () {
@@ -149,10 +250,6 @@ function startAnimation_2_m() {
 }
 
 preloadImages_2_m();
-
-
-
-
 
 // CANVAS 3
 

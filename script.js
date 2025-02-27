@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 tl_TS_Hook_M.to(".title-part-Hook-1", {
   opacity: 0,
+  scale: 1.5,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
     start: "top 5%",
@@ -18,7 +19,7 @@ tl_TS_Hook_M.to(".title-part-Hook-1", {
 
 tl_TS_Hook_M.to(".title-part-Hook-2", {
   opacity: 1,
-  scale: 1,
+  scale: 1.5,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
     start: "top 0%",
@@ -29,7 +30,6 @@ tl_TS_Hook_M.to(".title-part-Hook-2", {
 
 tl_TS_Hook_M.to(".title-part-Hook-2", {
   opacity: 0,
-  scale: 1,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
     start: "top -15%",
@@ -41,7 +41,7 @@ tl_TS_Hook_M.to(".title-part-Hook-2", {
 
 tl_TS_Hook_M.to(".title-part-Hook-3", {
   opacity: 1,
-  scale: 1,
+  scale: 1.5,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
     start: "top -20%",
@@ -54,7 +54,6 @@ tl_TS_Hook_M.to(".title-part-Hook-3", {
 
 tl_TS_Hook_M.to(".title-part-Hook-3", {
   opacity: 0,
-  scale: 1,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
     start: "top -35%",
@@ -65,7 +64,7 @@ tl_TS_Hook_M.to(".title-part-Hook-3", {
 
 tl_TS_Hook_M.to(".title-part-Hook-4", {
   opacity: 1,
-  scale: 1,
+  scale: 1.5,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
     start: "top -35%",
@@ -78,7 +77,6 @@ tl_TS_Hook_M.to(".title-part-Hook-4", {
 
 tl_TS_Hook_M.to(".title-part-Hook-4", {
   opacity: 0,
-  scale: 1,
   scrollTrigger: {
     trigger: ".uniq-TS-Hook-m ",
     start: "top -50%",

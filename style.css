@@ -276,6 +276,6 @@
   align-items: center;
   text-align: center;
   position: sticky;
-  top: 15%;
-  /* border: 1px solid red; */
+  top: -30%;
+  border: 1px solid red;
 }

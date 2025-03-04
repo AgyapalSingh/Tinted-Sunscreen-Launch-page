@@ -262,7 +262,7 @@ function loadImage_3_m(index) {
     console.log(img_3_m.width, "Image Width");
     console.log(img_3_m.height, "Image Height");
 
-    canvas_3_m.width = window.innerWidth /1.01;
+    canvas_3_m.width = window.innerWidth / 1.01;
     console.log(canvas_3_m.width, "Canvas Width");
 
     canvas_3_m.height = window.innerHeight / 1.1;
@@ -274,7 +274,8 @@ function loadImage_3_m(index) {
     const scaleY_3_m = canvas_3_m.height / img_3_m.height;
     console.log(scaleY_3_m, "ScaleY CanvasHeight/ImageHeight");
 
-    const scale_3_m = Math.max(scaleX_3_m, scaleY_3_m);
+    // const scale_3_m = Math.max(scaleX_3_m, scaleY_3_m);
+    const scale_3_m = 1;
     console.log(scale_3_m, "ScaleX or ScaleY - Max");
 
     const newWidth_3_m = img_3_m.width * scale_3_m;
@@ -282,12 +283,6 @@ function loadImage_3_m(index) {
 
     const newHeight_3_m = img_3_m.height * scale_3_m;
     console.log(newHeight_3_m, "New Image Height");
-
-    const offsetX_3_m = (canvas_3_m.width - newWidth_3_m) / 2;
-    console.log(offsetX_3_m, "Set X offset");
-
-    const offsetY_3_m = (canvas_3_m.height - newHeight_3_m) / 2;
-    console.log(offsetY_3_m, "Set Y offset");
 
     // context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
     // context_3_m.imageSmoothingEnabled = true;
@@ -307,12 +302,19 @@ function loadImage_3_m(index) {
 
     const canvasWidth = canvas_3_m.width;
     const canvasHeight = canvas_3_m.height;
+
+    console.log(canvas_3_m.width, "Canvas Width");
+    console.log(canvas_3_m.height, "Canvas Height");
+
     const imageWidth = 350;
     const imageHeight = 600;
 
     // Calculate the position to center the image
     const centerX = (canvasWidth - imageWidth) / 2;
+    console.log(centerX, "Canvas center X");
+
     const centerY = (canvasHeight - imageHeight) / 2;
+    console.log(centerY, "Canvas center Y");
 
     // Draw the image centered in the canvas
     context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
@@ -332,9 +334,10 @@ function startAnimation_3_m() {
   tl_TS_Product_M_3 = gsap.timeline({
     scrollTrigger: {
       trigger: ".uniq-TS-product-image-m-3 ",
-      start: "top 45%",
-      end: "top 10%",
+      start: "top 25%",
+      end: "top 0%",
       scrub: 1,
+      markers: true
     },
   });
 

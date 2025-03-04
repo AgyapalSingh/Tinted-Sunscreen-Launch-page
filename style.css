@@ -274,6 +274,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   position: sticky;
   top: 15%;
+  /* border: 1px solid red; */
 }

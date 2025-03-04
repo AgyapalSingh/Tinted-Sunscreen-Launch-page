@@ -39,7 +39,6 @@ tl_TS_Hook_M.to(".title-part-Hook-2", {
   },
 });
 
-
 tl_TS_Hook_M.to(".title-part-Hook-3", {
   opacity: 1,
   scale: 1.5,
@@ -50,8 +49,6 @@ tl_TS_Hook_M.to(".title-part-Hook-3", {
     scrub: 1,
   },
 });
-
-
 
 tl_TS_Hook_M.to(".title-part-Hook-3", {
   opacity: 0,
@@ -75,8 +72,6 @@ tl_TS_Hook_M.to(".title-part-Hook-4", {
   },
 });
 
-
-
 tl_TS_Hook_M.to(".title-part-Hook-4", {
   opacity: 0,
   scale: 1,
@@ -87,30 +82,6 @@ tl_TS_Hook_M.to(".title-part-Hook-4", {
     scrub: 1,
   },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  CANVAS 1
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
@@ -286,20 +257,73 @@ function preloadImages_3_m() {
 
 function loadImage_3_m(index) {
   if (index >= 0 && index < frames_3_m.maxIndex_3) {
+    console.log("Start from this");
     const img_3_m = images_3_m[index];
-    canvas_3_m.width = 300;
-    canvas_3_m.height = 500;
+    console.log(img_3_m.width, "Image Width");
+    console.log(img_3_m.height, "Image Height");
+
+    canvas_3_m.width = window.innerWidth /1.01;
+    console.log(canvas_3_m.width, "Canvas Width");
+
+    canvas_3_m.height = window.innerHeight / 1.1;
+    console.log(canvas_3_m.height, "Canvas Height");
+
     const scaleX_3_m = canvas_3_m.width / img_3_m.width;
+    console.log(scaleX_3_m, "ScaleX CanvasWidth/ImageWidth");
+
     const scaleY_3_m = canvas_3_m.height / img_3_m.height;
+    console.log(scaleY_3_m, "ScaleY CanvasHeight/ImageHeight");
+
     const scale_3_m = Math.max(scaleX_3_m, scaleY_3_m);
+    console.log(scale_3_m, "ScaleX or ScaleY - Max");
+
     const newWidth_3_m = img_3_m.width * scale_3_m;
+    console.log(newWidth_3_m, "New Image Width");
+
     const newHeight_3_m = img_3_m.height * scale_3_m;
+    console.log(newHeight_3_m, "New Image Height");
+
     const offsetX_3_m = (canvas_3_m.width - newWidth_3_m) / 2;
+    console.log(offsetX_3_m, "Set X offset");
+
     const offsetY_3_m = (canvas_3_m.height - newHeight_3_m) / 2;
+    console.log(offsetY_3_m, "Set Y offset");
+
+    // context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
+    // context_3_m.imageSmoothingEnabled = true;
+    // context_3_m.imageSmoothingQuality = "high";
+    // context_3_m.drawImage(img_3_m, 0, 0, 300, 500);
+
+    // context_3_m.lineWidth = 5; // Border thickness
+    // context_3_m.strokeStyle = "black"; // Border color
+
+    // // Draw border around the image
+    // context_3_m.strokeRect(0, 0, 300, 500);
+    // frames_3_m.currentIndex_3 = index;
+
     context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
     context_3_m.imageSmoothingEnabled = true;
     context_3_m.imageSmoothingQuality = "high";
-    context_3_m.drawImage(img_3_m, offsetX_3_m, offsetY_3_m, 300, 500);
+
+    const canvasWidth = canvas_3_m.width;
+    const canvasHeight = canvas_3_m.height;
+    const imageWidth = 350;
+    const imageHeight = 600;
+
+    // Calculate the position to center the image
+    const centerX = (canvasWidth - imageWidth) / 2;
+    const centerY = (canvasHeight - imageHeight) / 2;
+
+    // Draw the image centered in the canvas
+    context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
+
+    // Set border properties
+    // context_3_m.lineWidth = 5; // Border thickness
+    // context_3_m.strokeStyle = "black"; // Border color
+
+    // Draw border around the image
+    // context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
+
     frames_3_m.currentIndex_3 = index;
   }
 }

@@ -337,7 +337,7 @@ function startAnimation_3_m() {
       start: "top 25%",
       end: "top 0%",
       scrub: 1,
-      markers: true
+      // markers: true
     },
   });
 

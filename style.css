@@ -8,6 +8,7 @@
   font-family: "Poppins";
   height: 100px;
   background-color: #183457;
+  scroll-behavior: smooth;
 }
 
 .uniq-TS-Developer h1 {

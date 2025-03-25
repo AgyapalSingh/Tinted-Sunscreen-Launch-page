@@ -325,3 +325,99 @@
   top: 15%;
   /* border: 1px solid red; */
 }
+
+
+
+
+
+/* INGREDIENTS */
+.uniq-TS-ingridiants-m{
+  display: flex;
+  padding: 40px 0px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  color: #183457;
+}
+
+.uniq-TS-product-ingredients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent !important;
+}
+.product-card-wrapper {
+  max-width: 1100px;
+  margin: 0 60px 35px;
+  overflow: hidden;
+}
+.card-list .card-item {
+  list-style: none;
+}
+.card-list .card-item .card-link {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.product-card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #183457;
+}
+.product-card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.product-card-wrapper .swiper-slide-button {
+  color: #183457;
+  margin-top: -35px;
+}
+.card-image {
+  width: 300px;
+  height: 200px;
+  animation: moveUpDown 2s ease-in-out infinite;
+  display: block;
+  border-radius: 5px;
+  padding-top: 5px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+.card-image:hover {
+  animation: none;
+}
+.ingredient-name {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #183457;
+}
+.ingredient-info {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: rgb(71, 71, 71);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px;
+  color: #183457;
+}
+

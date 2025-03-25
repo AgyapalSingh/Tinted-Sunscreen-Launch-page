@@ -1,87 +1,87 @@
 // Mobile     ===================================================================================================================================================
 
-var tl_TS_Hook_M = gsap.timeline();
+// var tl_TS_Hook_M = gsap.timeline();
 var tl_TS_Product_M = gsap.timeline();
 var tl_TS_Product_M_2 = gsap.timeline();
 var tl_TS_Product_M_3 = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
-tl_TS_Hook_M.to(".title-part-Hook-1", {
-  opacity: 0,
-  scale: 1.5,
-  scrollTrigger: {
-    trigger: ".uniq-TS-Hook-m ",
-    start: "top 5%",
-    end: "top 0%",
-    scrub: 1,
-  },
-});
+// tl_TS_Hook_M.to(".title-part-Hook-1", {
+//   opacity: 0,
+//   scale: 1.5,
+//   scrollTrigger: {
+//     trigger: ".uniq-TS-Hook-m ",
+//     start: "top 5%",
+//     end: "top 0%",
+//     scrub: 1,
+//   },
+// });
 
-tl_TS_Hook_M.to(".title-part-Hook-2", {
-  opacity: 1,
-  scale: 1.5,
-  scrollTrigger: {
-    trigger: ".uniq-TS-Hook-m ",
-    start: "top 0%",
-    end: "top -15%",
-    scrub: 1,
-  },
-});
+// tl_TS_Hook_M.to(".title-part-Hook-2", {
+//   opacity: 1,
+//   scale: 1.5,
+//   scrollTrigger: {
+//     trigger: ".uniq-TS-Hook-m ",
+//     start: "top 0%",
+//     end: "top -15%",
+//     scrub: 1,
+//   },
+// });
 
-tl_TS_Hook_M.to(".title-part-Hook-2", {
-  opacity: 0,
-  scale: 1,
-  scrollTrigger: {
-    trigger: ".uniq-TS-Hook-m ",
-    start: "top -15%",
-    end: "top -20%",
-    scrub: 1,
-  },
-});
+// tl_TS_Hook_M.to(".title-part-Hook-2", {
+//   opacity: 0,
+//   scale: 1,
+//   scrollTrigger: {
+//     trigger: ".uniq-TS-Hook-m ",
+//     start: "top -15%",
+//     end: "top -20%",
+//     scrub: 1,
+//   },
+// });
 
-tl_TS_Hook_M.to(".title-part-Hook-3", {
-  opacity: 1,
-  scale: 1.5,
-  scrollTrigger: {
-    trigger: ".uniq-TS-Hook-m ",
-    start: "top -20%",
-    end: "top -35%",
-    scrub: 1,
-  },
-});
+// tl_TS_Hook_M.to(".title-part-Hook-3", {
+//   opacity: 1,
+//   scale: 1.5,
+//   scrollTrigger: {
+//     trigger: ".uniq-TS-Hook-m ",
+//     start: "top -20%",
+//     end: "top -35%",
+//     scrub: 1,
+//   },
+// });
 
-tl_TS_Hook_M.to(".title-part-Hook-3", {
-  opacity: 0,
-  scale: 1,
-  scrollTrigger: {
-    trigger: ".uniq-TS-Hook-m ",
-    start: "top -35%",
-    end: "top -40%",
-    scrub: 1,
-  },
-});
+// tl_TS_Hook_M.to(".title-part-Hook-3", {
+//   opacity: 0,
+//   scale: 1,
+//   scrollTrigger: {
+//     trigger: ".uniq-TS-Hook-m ",
+//     start: "top -35%",
+//     end: "top -40%",
+//     scrub: 1,
+//   },
+// });
 
-tl_TS_Hook_M.to(".title-part-Hook-4", {
-  opacity: 1,
-  scale: 1.5,
-  scrollTrigger: {
-    trigger: ".uniq-TS-Hook-m ",
-    start: "top -40%",
-    end: "top -55%",
-    scrub: 1,
-  },
-});
+// tl_TS_Hook_M.to(".title-part-Hook-4", {
+//   opacity: 1,
+//   scale: 1.5,
+//   scrollTrigger: {
+//     trigger: ".uniq-TS-Hook-m ",
+//     start: "top -40%",
+//     end: "top -55%",
+//     scrub: 1,
+//   },
+// });
 
-tl_TS_Hook_M.to(".title-part-Hook-4", {
-  opacity: 0,
-  scale: 1,
-  scrollTrigger: {
-    trigger: ".uniq-TS-Hook-m ",
-    start: "top -55%",
-    end: "top -60%",
-    scrub: 1,
-  },
-});
+// tl_TS_Hook_M.to(".title-part-Hook-4", {
+//   opacity: 0,
+//   scale: 1,
+//   scrollTrigger: {
+//     trigger: ".uniq-TS-Hook-m ",
+//     start: "top -55%",
+//     end: "top -60%",
+//     scrub: 1,
+//   },
+// });
 
 //  CANVAS 1
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
@@ -310,3 +310,40 @@ function startAnimation_3_m() {
 }
 
 preloadImages_3_m();
+
+
+
+new Swiper(".product-card-wrapper", {
+  loop: true,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+
+  // Pagination bullets
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});

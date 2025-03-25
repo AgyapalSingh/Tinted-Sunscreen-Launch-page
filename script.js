@@ -1,17 +1,15 @@
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
     // Show loader and hide launch pages
-    document.querySelector(".uniq-TS-launch-page-container-m").style.visibility =
-      "hidden";
-    document.querySelector(".loader-container").style.visibility = "visible";
-    
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "none";
+    document.querySelector(".loader-container").style.display = "block"; // Ensure it is shown
   } else {
     // Hide loader and show launch pages
     document.querySelector(".loader-container").style.display = "none";
-    document.querySelector(".uniq-TS-launch-page-container-m").style.visibility =
-      "visible";
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "block"; // Ensure it is visible
   }
 };
+
 
 
 // Mobile     ===================================================================================================================================================

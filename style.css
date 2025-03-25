@@ -108,6 +108,7 @@
   bottom: 20px;
   right: 20px;
   animation: scrollUpDown 3s ease-in-out infinite;
+  z-index: 1000;
 }
 
 @keyframes scrollUpDown {

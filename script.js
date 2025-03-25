@@ -279,12 +279,12 @@ function loadImage_3_m(index) {
     // Draw the image centered in the canvas
     context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
 
-    // Set border properties
-    context_3_m.lineWidth = 50; // Border thickness
-    context_3_m.strokeStyle = "#183457"; // Border color
+    // // Set border properties
+    // context_3_m.lineWidth = 50; // Border thickness
+    // context_3_m.strokeStyle = "#183457"; // Border color
 
     // Draw border around the image
-    context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
+    // context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
 
     frames_3_m.currentIndex_3 = index;
   }

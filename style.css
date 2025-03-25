@@ -88,7 +88,21 @@
 
 .uniq-TS-Scroll-Message {
   width: 14px;
-  background-color: #dbe1ff;
+  background-image: linear-gradient(
+    to right,
+    #fdcea4,
+    #fdc89b,
+    #fcc392,
+    #fcbd89,
+    #fbb780,
+    #f8b279,
+    #f6ac73,
+    #f3a76c,
+    #eda166,
+    #e89a5f,
+    #e39459,
+    #dd8e53
+  );
   padding: 15px 0;
   position: fixed;
   bottom: 20px;
@@ -105,7 +119,6 @@
     transform: translateY(-10px);
   }
 }
-
 
 .uniq-TS-Scroll-Message p {
   font-size: 10px;
@@ -128,6 +141,21 @@
 
 .uniq-TS-launch-page-container-m {
   background-color: #dbe1ff;
+  background-image: linear-gradient(
+    to right,
+    #fdcea4,
+    #fdc89b,
+    #fcc392,
+    #fcbd89,
+    #fbb780,
+    #f8b279,
+    #f6ac73,
+    #f3a76c,
+    #eda166,
+    #e89a5f,
+    #e39459,
+    #dd8e53
+  );
   scroll-behavior: smooth;
 }
 
@@ -170,31 +198,6 @@
   opacity: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .uniq-TS-title-m {
   display: flex;
   flex-direction: column;
@@ -205,13 +208,27 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 100%;
   align-items: center;
   justify-content: center;
   font-family: "Poppins";
   position: sticky;
   top: -10%;
-  background-color: #dbe1ff;
+  background-image: linear-gradient(
+    to right,
+    #fdcea4,
+    #fdc89b,
+    #fcc392,
+    #fcbd89,
+    #fbb780,
+    #f8b279,
+    #f6ac73,
+    #f3a76c,
+    #eda166,
+    #e89a5f,
+    #e39459,
+    #dd8e53
+  );
 }
 
 .uniq-TS-title-text-m h1 {
@@ -220,7 +237,21 @@
   text-transform: uppercase;
   position: sticky;
   top: 35%;
-  background-color: #dbe1ff;
+  background-image: linear-gradient(
+    to right,
+    #fdcea4,
+    #fdc89b,
+    #fcc392,
+    #fcbd89,
+    #fbb780,
+    #f8b279,
+    #f6ac73,
+    #f3a76c,
+    #eda166,
+    #e89a5f,
+    #e39459,
+    #dd8e53
+  );
   width: 100%;
   text-align: center;
 }
@@ -258,7 +289,21 @@
 
 .extra-scroll {
   height: 100vh;
-  background-color: #dbe1ff;
+  background-image: linear-gradient(
+    to right,
+    #fdcea4,
+    #fdc89b,
+    #fcc392,
+    #fcbd89,
+    #fbb780,
+    #f8b279,
+    #f6ac73,
+    #f3a76c,
+    #eda166,
+    #e89a5f,
+    #e39459,
+    #dd8e53
+  );
   align-items: center;
 }
 

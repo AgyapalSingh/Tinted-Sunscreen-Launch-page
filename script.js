@@ -1,3 +1,18 @@
+document.onreadystatechange = function () {
+  if (document.readyState !== "complete") {
+    // Show loader and hide launch pages
+    document.querySelector(".loader-container").style.visibility = "visible";
+    document.querySelector(".uniq-TS-launch-page-container-m").style.visibility =
+      "hidden";
+  } else {
+    // Hide loader and show launch pages
+    document.querySelector(".loader-container").style.display = "none";
+    document.querySelector(".uniq-TS-launch-page-container-m").style.visibility =
+      "visible";
+  }
+};
+
+
 // Mobile     ===================================================================================================================================================
 
 // var tl_TS_Hook_M = gsap.timeline();

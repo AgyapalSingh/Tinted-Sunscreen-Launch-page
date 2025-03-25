@@ -288,25 +288,6 @@
   top: 15%;
 }
 
-.extra-scroll {
-  height: 100vh;
-  background-image: linear-gradient(
-    to right,
-    #fdcea4,
-    #fdc89b,
-    #fcc392,
-    #fcbd89,
-    #fbb780,
-    #f8b279,
-    #f6ac73,
-    #f3a76c,
-    #eda166,
-    #e89a5f,
-    #e39459,
-    #dd8e53
-  );
-  align-items: center;
-}
 
 /* Canvas 3 */
 
@@ -421,3 +402,23 @@
   color: #183457;
 }
 
+.uniq-TS-product-result{
+  width: 100%;
+}
+
+.uniq-TS-img-large{
+  width: 100%;
+}
+.uniq-TS-img-small{
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
+  .uniq-TS-img-large {
+    display: none;
+  }
+  .uniq-TS-img-small {
+    display: block;
+    width: 100%;
+  }
+}

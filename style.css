@@ -183,7 +183,8 @@
     #e39459,
     #dd8e53
   );
-  color: #183457;;
+  color: #183457;
+  border: 1px solid red;
 }
 
 .uniq-TS-title-text-m h1 {

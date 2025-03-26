@@ -376,18 +376,7 @@ gsap.from(".uniq-TS-benefits-list li", {
   },
 });
 
-
-gsap.from(".pre-order", {
-  opacity: 0,
-  zIndex: -1,
-  scrollTrigger: {
-    trigger: ".title-part-2 ",
-    start: "top 80%",
-    end: "top 50%",
-    scrub: 1,
-  },
-});
-
+// Explore
 gsap.to(".explore", {
   opacity: 0,
   zIndex: -1,
@@ -398,3 +387,31 @@ gsap.to(".explore", {
     scrub: 1,
   },
 });
+
+// Order-Button
+
+var tl_order = gsap.timeline();
+
+tl_order
+  .from(".pre-order", {
+    opacity: 0,
+    zIndex: -1,
+    scrollTrigger: {
+      trigger: ".title-part-2",
+      start: "top 80%",
+      end: "top 50%",
+      scrub: 1,
+    },
+  })
+  .to(".pre-order", {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".uniq-TS-product-result",
+      start: "top 58%",
+      end: "top 55%",
+      scrub: 1,
+      immediateRender: false,
+      toggleActions: "play none none reverse",
+      markers: true,
+    },
+  });

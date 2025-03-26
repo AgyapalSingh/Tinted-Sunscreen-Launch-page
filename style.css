@@ -226,6 +226,28 @@
   top: 15%;
 }
 
+/* Products Benefits */
+
+.uniq-TS-product-benefits{
+  display: flex;
+  padding: 5%;
+  align-items: center;
+  justify-content: center;
+}
+
+.uniq-TS-benefits-list{
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #183457;
+  
+  margin-bottom: 40px;
+}
+
+.uniq-TS-benefits-list li{
+  
+  margin-bottom: 20px;
+}
+
 /* Canvas 2 */
 
 .uniq-TS-product-container-m-2 {

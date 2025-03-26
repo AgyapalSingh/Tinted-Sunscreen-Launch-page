@@ -1,16 +1,16 @@
 document.onreadystatechange = function () {
   if (document.readyState !== "complete") {
     // Show loader and hide launch pages
-    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "none";
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display =
+      "none";
     document.querySelector(".loader-container").style.display = "block"; // Ensure it is shown
   } else {
     // Hide loader and show launch pages
     document.querySelector(".loader-container").style.display = "none";
-    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "block"; // Ensure it is visible
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display =
+      "block"; // Ensure it is visible
   }
 };
-
-
 
 // Mobile     ===================================================================================================================================================
 
@@ -271,7 +271,6 @@ function preloadImages_3_m() {
 
 function loadImage_3_m(index) {
   if (index >= 0 && index < frames_3_m.maxIndex_3) {
-
     const img_3_m = images_3_m[index];
     canvas_3_m.width = window.innerWidth / 1.01;
     canvas_3_m.height = window.innerHeight / 1.1;
@@ -325,8 +324,6 @@ function startAnimation_3_m() {
 
 preloadImages_3_m();
 
-
-
 new Swiper(".product-card-wrapper", {
   loop: true,
   spaceBetween: 30,
@@ -359,5 +356,22 @@ new Swiper(".product-card-wrapper", {
     1024: {
       slidesPerView: 3,
     },
+  },
+});
+
+// Benefits List Ani
+
+gsap.from(".uniq-TS-benefits-list li", {
+  y: 10,
+  duration: 0.5,
+  opacity: 0,
+  delay: -1,
+  stagger: 1,
+
+  scrollTrigger: {
+    trigger: ".uniq-TS-benefits-list",
+    start: "top 75%",
+    end: "top 55%",
+    scrub: 1,
   },
 });

@@ -244,8 +244,9 @@
 }
 
 .uniq-TS-benefits-list li{
-  
+  list-style-type: none;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Canvas 2 */

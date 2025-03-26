@@ -412,6 +412,5 @@ tl_order
       scrub: 1,
       immediateRender: false,
       toggleActions: "play none none reverse",
-      markers: true,
     },
   });

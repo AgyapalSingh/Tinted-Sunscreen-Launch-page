@@ -375,3 +375,26 @@ gsap.from(".uniq-TS-benefits-list li", {
     scrub: 1,
   },
 });
+
+
+gsap.from(".pre-order", {
+  opacity: 0,
+  zIndex: -1,
+  scrollTrigger: {
+    trigger: ".title-part-2 ",
+    start: "top 80%",
+    end: "top 50%",
+    scrub: 1,
+  },
+});
+
+gsap.to(".explore", {
+  opacity: 0,
+  zIndex: -1,
+  scrollTrigger: {
+    trigger: ".uniq-TS-title-m",
+    start: "top 0%",
+    end: "top -20%",
+    scrub: 1,
+  },
+});

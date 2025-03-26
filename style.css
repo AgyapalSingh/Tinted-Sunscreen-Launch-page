@@ -159,7 +159,7 @@
 }
 
 .uniq-TS-title-text-m {
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -167,7 +167,7 @@
   justify-content: center;
   font-family: "Poppins";
   position: sticky;
-  top: -10%;
+  top: 0%;
   background-image: linear-gradient(
     to right,
     #fdcea4,

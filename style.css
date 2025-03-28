@@ -186,7 +186,7 @@
     #dd8e53
   );
   color: #183457;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .uniq-TS-title-text-m h1 {
@@ -219,7 +219,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #uniq-TS-frame_1_m {
@@ -228,7 +228,7 @@
   align-items: center;
   position: sticky;
   top: 30%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 @media screen and (min-width: 769px) {
@@ -237,16 +237,16 @@
   }
   .uniq-TS-product-container-m {
     height: 200vh;
-    border: 1px solid rgb(25, 0, 255);
+    /* border: 1px solid rgb(25, 0, 255); */
   }
 
   .uniq-TS-canvas-benefits {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 23%;
   }
 
   .uniq-TS-canvas-benefits-list {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: sticky;
     top: 30%;
     font-size: 16px;
@@ -275,7 +275,7 @@
 @media screen and (min-width: 769px) {
   .uniq-TS-benefits-container-m {
     display: none;
-    border: 1px saddlebrown red;
+    /* border: 1px saddlebrown red; */
   }
 }
 

@@ -171,9 +171,9 @@ function drawImageOnCanvas_1(img_1_m) {
   );
 
   // Draw border
-  context_1_m.lineWidth = 2;
-  context_1_m.strokeStyle = "#183457";
-  context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+  // context_1_m.lineWidth = 2;
+  // context_1_m.strokeStyle = "#183457";
+  // context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 }
 
 // Optimize resizing by updating canvas size only on window resize

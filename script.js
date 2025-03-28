@@ -467,7 +467,7 @@ gsap.from(".uniq-TS-canvas-benefits-list li", {
     start: "top -75%",
     end: "top -95%",
     scrub: 1,
-    markers: true,
+    // markers: true,
   },
 });
 

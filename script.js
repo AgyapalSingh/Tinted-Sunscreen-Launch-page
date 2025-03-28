@@ -313,11 +313,12 @@ function loadImage_3_m(index) {
 function startAnimation_3_m() {
   tl_TS_Product_M_3 = gsap.timeline({
     scrollTrigger: {
-      trigger: ".uniq-TS-product-image-m-3 ",
-      start: "top 35%",
-      end: "top 0%",
+      trigger: "#uniq-TS-frame_3_m",
+      start: "top 25%",
+      end: "top -25%",
       scrub: 1,
-      markers: true
+      markers: true,
+      // pin: true
     },
   });
 

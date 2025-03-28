@@ -116,7 +116,6 @@ function preloadImages_1_m() {
 
     const img_1_m = new Image();
 
-    console.log(imageUrl_1_m)
     img_1_m.src = imageUrl_1_m;
     img_1_m.onload = () => {
       imagesLoaded_1_m++;

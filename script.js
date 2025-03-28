@@ -181,22 +181,34 @@ window.addEventListener("resize", () => {
 });
 
 function startAnimation_m() {
-  tl_TS_Product_M = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#uniq-TS-frame_1_m ",
-      start: "top 45%",
-      end: "top -25%",
-      scrub: 1,
-      markers: true,
+  gsap.matchMedia().add(
+    {
+      isMobile: "(max-width: 768px)", 
+      isDesktop: "(min-width: 769px)", 
     },
-  });
-  tl_TS_Product_M.to(frames_1_m, {
-    currentIndex_1: frames_1_m.maxIndex_1,
-    onUpdate: function () {
-      loadImage_1_m(Math.floor(frames_1_m.currentIndex_1));
-    },
-  });
+    (context) => {
+      let { isMobile, isDesktop } = context.conditions;
+      
+      tl_TS_Product_M = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#uniq-TS-frame_1_m",
+          start: isMobile ? "top 45%" : "top 20%", 
+          end: isMobile ? "top -25%" : "top -45%", 
+          scrub: 1,
+          markers: true,
+        },
+      });
+
+      tl_TS_Product_M.to(frames_1_m, {
+        currentIndex_1: frames_1_m.maxIndex_1,
+        onUpdate: function () {
+          loadImage_1_m(Math.floor(frames_1_m.currentIndex_1));
+        },
+      });
+    }
+  );
 }
+
 
 preloadImages_1_m();
 

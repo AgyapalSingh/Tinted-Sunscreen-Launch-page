@@ -101,7 +101,7 @@ const context_1_m = canvas_1_m.getContext("2d");
 
 const frames_1_m = {
   currentIndex_1: 0,
-  maxIndex_1: 60,
+  maxIndex_1: 90,
 };
 
 let imagesLoaded_1_m = 0;
@@ -109,10 +109,14 @@ const images_1_m = [];
 
 function preloadImages_1_m() {
   for (var i = 0; i < frames_1_m.maxIndex_1; i++) {
-    const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
-      .toString()
-      .padStart(3, "0")}.png?v=1743147385`;
+
+      const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TS${i
+        .toString()
+        .padStart(4, "0")}.png?v=1743159947`;
+
     const img_1_m = new Image();
+
+    console.log(imageUrl_1_m)
     img_1_m.src = imageUrl_1_m;
     img_1_m.onload = () => {
       imagesLoaded_1_m++;

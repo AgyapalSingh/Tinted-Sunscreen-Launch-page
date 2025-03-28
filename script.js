@@ -422,7 +422,7 @@ tl_order
     opacity: 0,
     zIndex: -1,
     scrollTrigger: {
-      trigger: ".title-part-2",
+      trigger: ".uniq-TS-product-result",
       start: "top 80%",
       end: "top 50%",
       scrub: 1,

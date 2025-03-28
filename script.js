@@ -106,21 +106,13 @@ const frames_1_m = {
 
 let imagesLoaded_1_m = 0;
 const images_1_m = [];
+
 function preloadImages_1_m() {
   for (var i = 0; i < frames_1_m.maxIndex_1; i++) {
-    // const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
-    //   .toString()
-    //   .padStart(3, "0")}.png?v=1737009142`;
-
     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
       .toString()
       .padStart(3, "0")}.png?v=1743147385`;
-
-    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades001.png?v=1743147385
     const img_1_m = new Image();
-
-    // console.log(imageUrl_1_m)
-
     img_1_m.src = imageUrl_1_m;
     img_1_m.onload = () => {
       imagesLoaded_1_m++;
@@ -137,7 +129,6 @@ function loadImage_1_m(index) {
   if (index >= 0 && index < frames_1_m.maxIndex_1) {
     const img_1_m = images_1_m[index];
 
-    // Ensure the image is fully loaded before drawing
     if (!img_1_m.complete) {
       img_1_m.onload = () => drawImageOnCanvas(img_1_m);
       return;
@@ -149,7 +140,6 @@ function loadImage_1_m(index) {
 }
 
 function drawImageOnCanvas_1(img_1_m) {
-  // Set canvas size
   canvas_1_m.width = window.innerWidth / 1.1;
   canvas_1_m.height = window.innerHeight / 1.2;
 
@@ -160,22 +150,19 @@ function drawImageOnCanvas_1(img_1_m) {
   const canvasWidth_1 = canvas_1_m.width;
   const canvasHeight_1 = canvas_1_m.height;
 
-  // Dynamically scale the image while maintaining aspect ratio
-  const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1); // Scale factor
+  const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1); 
   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
 
-  // Calculate position to center the image
   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
   const centerY_1 = (canvasHeight_1 - imageHeight_1) / 2;
 
-  // Draw the image centered
   context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 
   // Draw border
-  context_1_m.lineWidth = 2;
-  context_1_m.strokeStyle = "#183457";
-  context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+  // context_1_m.lineWidth = 2;
+  // context_1_m.strokeStyle = "#183457";
+  // context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 }
 
 // Optimize resizing by updating canvas size only on window resize
@@ -191,7 +178,7 @@ function startAnimation_m() {
       start: "top 25%",
       end: "top -25%",
       scrub: 1,
-      markers: true,
+      // markers: true,
     },
   });
   tl_TS_Product_M.to(frames_1_m, {
@@ -203,6 +190,24 @@ function startAnimation_m() {
 }
 
 preloadImages_1_m();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // CANVAS 2
 
@@ -348,9 +353,9 @@ function drawImageOnCanvas(img_3_m) {
   context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
 
   // Draw border
-  context_3_m.lineWidth = 2;
-  context_3_m.strokeStyle = "#183457";
-  context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
+  // context_3_m.lineWidth = 2;
+  // context_3_m.strokeStyle = "#183457";
+  // context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
 }
 
 // Optimize resizing by updating canvas size only on window resize

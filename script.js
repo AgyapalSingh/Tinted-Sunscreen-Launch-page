@@ -140,8 +140,9 @@ function loadImage_1_m(index) {
 }
 
 function drawImageOnCanvas_1(img_1_m) {
+  const isMobile = window.innerWidth <= 768;
   canvas_1_m.width = window.innerWidth / 1.1;
-  canvas_1_m.height = window.innerHeight / 1.2;
+  canvas_1_m.height = isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2;
 
   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
   context_1_m.imageSmoothingEnabled = true;
@@ -150,26 +151,34 @@ function drawImageOnCanvas_1(img_1_m) {
   const canvasWidth_1 = canvas_1_m.width;
   const canvasHeight_1 = canvas_1_m.height;
 
-  const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1); 
+  const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1);
   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
 
-  const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-  const centerY_1 = (canvasHeight_1 - imageHeight_1) / 2;
+  // const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
+  // const centerY_1 = (canvasHeight_1 - imageHeight_1) / 2;
 
-  context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+  const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
+  const centerY_1 = canvasHeight_1 - imageHeight_1;
+
+  context_1_m.drawImage(
+    img_1_m,
+    centerX_1,
+    centerY_1,
+    imageWidth_1,
+    imageHeight_1
+  );
 
   // Draw border
-  // context_1_m.lineWidth = 2;
-  // context_1_m.strokeStyle = "#183457";
-  // context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+  context_1_m.lineWidth = 2;
+  context_1_m.strokeStyle = "#183457";
+  context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 }
 
 // Optimize resizing by updating canvas size only on window resize
 window.addEventListener("resize", () => {
   loadImage_1_m(frames_1_m.currentIndex_1);
 });
-
 
 function startAnimation_m() {
   tl_TS_Product_M = gsap.timeline({
@@ -178,7 +187,7 @@ function startAnimation_m() {
       start: "top 25%",
       end: "top -25%",
       scrub: 1,
-      // markers: true,
+      markers: true,
     },
   });
   tl_TS_Product_M.to(frames_1_m, {
@@ -190,24 +199,6 @@ function startAnimation_m() {
 }
 
 preloadImages_1_m();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // CANVAS 2
 
@@ -295,7 +286,7 @@ const images_3_m = [];
 
 function preloadImages_3_m() {
   for (var i = 0; i < frames_3_m.maxIndex_3; i++) {
-    const imageUrl_3_m =`https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
+    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
       .toString()
       .padStart(3, "0")}.png?v=1743147385`;
 
@@ -329,9 +320,12 @@ function loadImage_3_m(index) {
 }
 
 function drawImageOnCanvas(img_3_m) {
+  // Detect if the device is mobile (commonly screens smaller than 768px)
+  const isMobile = window.innerWidth <= 768;
+
   // Set canvas size
   canvas_3_m.width = window.innerWidth / 1.1;
-  canvas_3_m.height = window.innerHeight / 1.2;
+  canvas_3_m.height = isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2;
 
   context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
   context_3_m.imageSmoothingEnabled = true;
@@ -345,14 +339,16 @@ function drawImageOnCanvas(img_3_m) {
   const imageWidth = Math.min(maxSize, img_3_m.width);
   const imageHeight = Math.min(maxSize, img_3_m.height);
 
-  // Calculate position to center the image
+  // Position X: Center horizontally
   const centerX = (canvasWidth - imageWidth) / 2;
-  const centerY = (canvasHeight - imageHeight) / 2;
 
-  // Draw the image centered
+  // Position Y: Align the bottom of the image with the bottom of the canvas
+  const centerY = canvasHeight - imageHeight;
+
+  // Draw the image at the computed position
   context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
 
-  // Draw border
+  // Uncomment if you want a border
   // context_3_m.lineWidth = 2;
   // context_3_m.strokeStyle = "#183457";
   // context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
@@ -360,9 +356,14 @@ function drawImageOnCanvas(img_3_m) {
 
 // Optimize resizing by updating canvas size only on window resize
 window.addEventListener("resize", () => {
-  loadImage_3_m(frames_3_m.currentIndex_3);
+  drawImageOnCanvas(images_3_m[frames_3_m.currentIndex_3]);
 });
 
+
+// Optimize resizing by updating canvas size only on window resize
+window.addEventListener("resize", () => {
+  loadImage_3_m(frames_3_m.currentIndex_3);
+});
 
 function startAnimation_3_m() {
   tl_TS_Product_M_3 = gsap.timeline({

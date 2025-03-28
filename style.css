@@ -215,9 +215,10 @@
 
 /* Canvas 1 */
 .uniq-TS-product-container-m {
-  height: 150vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  border: 1px solid red;
 }
 
 #uniq-TS-frame_1_m {
@@ -226,6 +227,7 @@
   align-items: center;
   position: sticky;
   top: 10%;
+  border: 1px solid red;
 }
 
 /* Products Benefits */
@@ -238,11 +240,6 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 769px) {
-  .uniq-TS-benefits-container-m{
-    margin-top: -180px;
-  }
-}
 
 .uniq-TS-benefits-list {
   font-size: 14px;

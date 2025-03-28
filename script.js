@@ -108,13 +108,13 @@ let imagesLoaded_1_m = 0;
 const images_1_m = [];
 function preloadImages_1_m() {
   for (var i = 0; i < frames_1_m.maxIndex_1; i++) {
-    const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
-      .toString()
-      .padStart(3, "0")}.png?v=1737009142`;
-
-    // const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
+    // const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
     //   .toString()
-    //   .padStart(3, "0")}.png?v=1743147385`;
+    //   .padStart(3, "0")}.png?v=1737009142`;
+
+    const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
+      .toString()
+      .padStart(3, "0")}.png?v=1743147385`;
 
     // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades001.png?v=1743147385
     const img_1_m = new Image();
@@ -125,7 +125,7 @@ function preloadImages_1_m() {
     img_1_m.onload = () => {
       imagesLoaded_1_m++;
       if (imagesLoaded_1_m === frames_1_m.maxIndex_1) {
-        loadImage_m(frames_1_m.currentIndex_1);
+        loadImage_1_m(frames_1_m.currentIndex_1);
         startAnimation_m();
       }
     };
@@ -133,39 +133,71 @@ function preloadImages_1_m() {
   }
 }
 
-function loadImage_m(index) {
+function loadImage_1_m(index) {
   if (index >= 0 && index < frames_1_m.maxIndex_1) {
     const img_1_m = images_1_m[index];
-    canvas_1_m.width = 300;
-    canvas_1_m.height = 500;
-    const scaleX_1_m = canvas_1_m.width / img_1_m.width;
-    const scaleY_1_m = canvas_1_m.height / img_1_m.height;
-    const scale_1_m = Math.max(scaleX_1_m, scaleY_1_m);
-    const newWidth_1_m = img_1_m.width * scale_1_m;
-    const newHeight_1_m = img_1_m.height * scale_1_m;
-    const offsetX_1_m = (canvas_1_m.width - newWidth_1_m) / 2;
-    const offsetY_1_m = (canvas_1_m.height - newHeight_1_m) / 2;
-    context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-    context_1_m.imageSmoothingEnabled = true;
-    context_1_m.imageSmoothingQuality = "high";
-    context_1_m.drawImage(img_1_m, offsetX_1_m, offsetY_1_m, 300, 500);
+
+    // Ensure the image is fully loaded before drawing
+    if (!img_1_m.complete) {
+      img_1_m.onload = () => drawImageOnCanvas(img_1_m);
+      return;
+    }
+
+    drawImageOnCanvas_1(img_1_m);
     frames_1_m.currentIndex_1 = index;
   }
 }
 
+function drawImageOnCanvas_1(img_1_m) {
+  // Set canvas size
+  canvas_1_m.width = window.innerWidth / 1.1;
+  canvas_1_m.height = window.innerHeight / 1.2;
+
+  context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
+  context_1_m.imageSmoothingEnabled = true;
+  context_1_m.imageSmoothingQuality = "high";
+
+  const canvasWidth_1 = canvas_1_m.width;
+  const canvasHeight_1 = canvas_1_m.height;
+
+  // Dynamically scale the image while maintaining aspect ratio
+  const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1); // Scale factor
+  const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
+  const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
+
+  // Calculate position to center the image
+  const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
+  const centerY_1 = (canvasHeight_1 - imageHeight_1) / 2;
+
+  // Draw the image centered
+  context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+
+  // Draw border
+  context_1_m.lineWidth = 2;
+  context_1_m.strokeStyle = "#183457";
+  context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+}
+
+// Optimize resizing by updating canvas size only on window resize
+window.addEventListener("resize", () => {
+  loadImage_1_m(frames_1_m.currentIndex_1);
+});
+
+
 function startAnimation_m() {
   tl_TS_Product_M = gsap.timeline({
     scrollTrigger: {
-      trigger: ".uniq-TS-product-image-m ",
-      start: "top 45%",
-      end: "top 10%",
+      trigger: "#uniq-TS-frame_1_m ",
+      start: "top 25%",
+      end: "top -25%",
       scrub: 1,
+      markers: true,
     },
   });
   tl_TS_Product_M.to(frames_1_m, {
     currentIndex_1: frames_1_m.maxIndex_1,
     onUpdate: function () {
-      loadImage_m(Math.floor(frames_1_m.currentIndex_1));
+      loadImage_1_m(Math.floor(frames_1_m.currentIndex_1));
     },
   });
 }
@@ -334,7 +366,7 @@ function startAnimation_3_m() {
       start: "top 25%",
       end: "top -25%",
       scrub: 1,
-      markers: true,
+      // markers: true,
       // pin: true
     },
   });

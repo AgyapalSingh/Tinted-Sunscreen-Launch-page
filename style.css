@@ -111,7 +111,7 @@
     #dd8e53
   );
   scroll-behavior: smooth;
-  
+
   display: none;
 }
 
@@ -235,10 +235,29 @@
     height: 200vh;
     border: 1px solid rgb(25, 0, 255);
   }
+
+  .uniq-TS-canvas-benefits {
+    border: 1px solid red;
+  }
+
+  .uniq-TS-canvas-benefits-list {
+    border: 1px solid red;
+    position: sticky;
+    top: 30%;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: #183457;
+    margin-bottom: 40px;
+  }
+
+  .uniq-TS-canvas-benefits-list li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 /* Products Benefits */
-
 
 .uniq-TS-product-benefits {
   display: flex;
@@ -247,6 +266,18 @@
   justify-content: center;
 }
 
+@media screen and (min-width: 769px) {
+  .uniq-TS-benefits-container-m {
+    display: none;
+    border: 1px saddlebrown red;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .uniq-TS-canvas-benefits {
+    display: none;
+  }
+}
 
 .uniq-TS-benefits-list {
   font-size: 14px;

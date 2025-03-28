@@ -141,7 +141,8 @@ function loadImage_1_m(index) {
 
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
-  canvas_1_m.width = window.innerWidth / 1.01;
+  // canvas_1_m.width = window.innerWidth / 1.01;
+  canvas_1_m.width = isMobile ? window.innerWidth / 1.01: window.innerWidth / 2;
   canvas_1_m.height = isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2;
 
   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);

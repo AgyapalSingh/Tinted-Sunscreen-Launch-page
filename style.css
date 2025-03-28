@@ -218,6 +218,7 @@
   height: 150vh;
   display: flex;
   justify-content: center;
+  border: 1px solid red;
 }
 
 #uniq-TS-frame_1_m {
@@ -226,6 +227,7 @@
   align-items: center;
   position: sticky;
   top: 15%;
+  border: 1px solid red;
 }
 
 /* Products Benefits */

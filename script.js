@@ -1,13 +1,14 @@
 document.onreadystatechange = function () {
   if (document.readyState === "complete") {
     document.querySelector(".loader-container").style.display = "none";
-    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "block";
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display =
+      "block";
   } else {
     document.querySelector(".loader-container").style.display = "block";
-    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "none";
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display =
+      "none";
   }
 };
-
 
 // Mobile     ===================================================================================================================================================
 
@@ -100,7 +101,7 @@ const context_1_m = canvas_1_m.getContext("2d");
 
 const frames_1_m = {
   currentIndex_1: 0,
-  maxIndex_1: 65,
+  maxIndex_1: 60,
 };
 
 let imagesLoaded_1_m = 0;
@@ -110,7 +111,15 @@ function preloadImages_1_m() {
     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
       .toString()
       .padStart(3, "0")}.png?v=1737009142`;
+
+    // const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
+    //   .toString()
+    //   .padStart(3, "0")}.png?v=1743147385`;
+
+    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades001.png?v=1743147385
     const img_1_m = new Image();
+
+    // console.log(imageUrl_1_m)
 
     img_1_m.src = imageUrl_1_m;
     img_1_m.onload = () => {
@@ -241,7 +250,7 @@ const context_3_m = canvas_3_m.getContext("2d");
 
 const frames_3_m = {
   currentIndex_3: 0,
-  maxIndex_3: 65,
+  maxIndex_3: 61,
 };
 
 let imagesLoaded_3_m = 0;
@@ -249,9 +258,10 @@ const images_3_m = [];
 
 function preloadImages_3_m() {
   for (var i = 0; i < frames_3_m.maxIndex_3; i++) {
-    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
+    const imageUrl_3_m =`https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
       .toString()
-      .padStart(3, "0")}.png?v=1737009142`;
+      .padStart(3, "0")}.png?v=1743147385`;
+
     const img_3_m = new Image();
 
     img_3_m.src = imageUrl_3_m;
@@ -279,8 +289,8 @@ function loadImage_3_m(index) {
     const canvasWidth = canvas_3_m.width;
     const canvasHeight = canvas_3_m.height;
 
-    const imageWidth = 350;
-    const imageHeight = 600;
+    const imageWidth = 370;
+    const imageHeight = 370;
 
     // Calculate the position to center the image
     const centerX = (canvasWidth - imageWidth) / 2;
@@ -289,12 +299,12 @@ function loadImage_3_m(index) {
     // Draw the image centered in the canvas
     context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
 
-    // // Set border properties
-    // context_3_m.lineWidth = 50; // Border thickness
-    // context_3_m.strokeStyle = "#183457"; // Border color
+    // Set border properties
+    context_3_m.lineWidth = 2; // Border thickness
+    context_3_m.strokeStyle = "#183457"; // Border color
 
     // Draw border around the image
-    // context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
+    context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
 
     frames_3_m.currentIndex_3 = index;
   }
@@ -304,10 +314,10 @@ function startAnimation_3_m() {
   tl_TS_Product_M_3 = gsap.timeline({
     scrollTrigger: {
       trigger: ".uniq-TS-product-image-m-3 ",
-      start: "top 25%",
+      start: "top 35%",
       end: "top 0%",
       scrub: 1,
-      // markers: true
+      markers: true
     },
   });
 

@@ -186,6 +186,7 @@
     #dd8e53
   );
   color: #183457;
+  border: 1px solid red;
 }
 
 .uniq-TS-title-text-m h1 {
@@ -238,6 +239,7 @@
 
   .uniq-TS-canvas-benefits {
     border: 1px solid red;
+    width: 23%;
   }
 
   .uniq-TS-canvas-benefits-list {
@@ -248,6 +250,7 @@
     font-family: "Poppins", sans-serif;
     color: #183457;
     margin-bottom: 40px;
+    width: 100%;
   }
 
   .uniq-TS-canvas-benefits-list li {

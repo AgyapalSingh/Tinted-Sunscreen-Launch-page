@@ -196,7 +196,7 @@ function startAnimation_m() {
           start: isMobile ? "top 45%" : "top 20%", 
           end: isMobile ? "top -25%" : "top -45%", 
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -449,6 +449,25 @@ gsap.from(".uniq-TS-benefits-list li", {
     start: "top 75%",
     end: "top 55%",
     scrub: 1,
+  },
+});
+
+
+// Canvas - Desktop Benefits List Ani
+
+gsap.from(".uniq-TS-canvas-benefits-list li", {
+  y: 10,
+  duration: 0.5,
+  opacity: 0,
+  delay: -1,
+  stagger: 1,
+
+  scrollTrigger: {
+    trigger: ".uniq-TS-product-container-m",
+    start: "top -75%",
+    end: "top -95%",
+    scrub: 1,
+    markers: true,
   },
 });
 

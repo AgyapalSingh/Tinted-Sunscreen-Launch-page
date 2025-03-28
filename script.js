@@ -279,36 +279,53 @@ function preloadImages_3_m() {
 function loadImage_3_m(index) {
   if (index >= 0 && index < frames_3_m.maxIndex_3) {
     const img_3_m = images_3_m[index];
-    canvas_3_m.width = window.innerWidth / 1.01;
-    canvas_3_m.height = window.innerHeight / 1.1;
 
-    context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
-    context_3_m.imageSmoothingEnabled = true;
-    context_3_m.imageSmoothingQuality = "high";
+    // Ensure the image is fully loaded before drawing
+    if (!img_3_m.complete) {
+      img_3_m.onload = () => drawImageOnCanvas(img_3_m);
+      return;
+    }
 
-    const canvasWidth = canvas_3_m.width;
-    const canvasHeight = canvas_3_m.height;
-
-    const imageWidth = 370;
-    const imageHeight = 370;
-
-    // Calculate the position to center the image
-    const centerX = (canvasWidth - imageWidth) / 2;
-    const centerY = (canvasHeight - imageHeight) / 2;
-
-    // Draw the image centered in the canvas
-    context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
-
-    // Set border properties
-    context_3_m.lineWidth = 2; // Border thickness
-    context_3_m.strokeStyle = "#183457"; // Border color
-
-    // Draw border around the image
-    context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
-
+    drawImageOnCanvas(img_3_m);
     frames_3_m.currentIndex_3 = index;
   }
 }
+
+function drawImageOnCanvas(img_3_m) {
+  // Set canvas size
+  canvas_3_m.width = window.innerWidth / 1.1;
+  canvas_3_m.height = window.innerHeight / 1.2;
+
+  context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
+  context_3_m.imageSmoothingEnabled = true;
+  context_3_m.imageSmoothingQuality = "high";
+
+  const canvasWidth = canvas_3_m.width;
+  const canvasHeight = canvas_3_m.height;
+
+  // Dynamically scale the image while maintaining aspect ratio
+  const maxSize = Math.min(canvasWidth * 1, canvasHeight * 1); // Scale factor
+  const imageWidth = Math.min(maxSize, img_3_m.width);
+  const imageHeight = Math.min(maxSize, img_3_m.height);
+
+  // Calculate position to center the image
+  const centerX = (canvasWidth - imageWidth) / 2;
+  const centerY = (canvasHeight - imageHeight) / 2;
+
+  // Draw the image centered
+  context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
+
+  // Draw border
+  context_3_m.lineWidth = 2;
+  context_3_m.strokeStyle = "#183457";
+  context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
+}
+
+// Optimize resizing by updating canvas size only on window resize
+window.addEventListener("resize", () => {
+  loadImage_3_m(frames_3_m.currentIndex_3);
+});
+
 
 function startAnimation_3_m() {
   tl_TS_Product_M_3 = gsap.timeline({

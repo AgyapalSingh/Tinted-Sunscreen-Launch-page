@@ -232,6 +232,9 @@
 }
 
 @media screen and (min-width: 769px) {
+  #uniq-TS-frame_1_m {
+    top: 10%;
+  }
   .uniq-TS-product-container-m {
     height: 200vh;
     border: 1px solid rgb(25, 0, 255);

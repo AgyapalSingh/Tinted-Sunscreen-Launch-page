@@ -1,16 +1,13 @@
 document.onreadystatechange = function () {
-  if (document.readyState !== "complete") {
-    // Show loader and hide launch pages
-    document.querySelector(".uniq-TS-launch-page-container-m").style.display =
-      "none";
-    document.querySelector(".loader-container").style.display = "block"; // Ensure it is shown
-  } else {
-    // Hide loader and show launch pages
+  if (document.readyState === "complete") {
     document.querySelector(".loader-container").style.display = "none";
-    document.querySelector(".uniq-TS-launch-page-container-m").style.display =
-      "block"; // Ensure it is visible
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "block";
+  } else {
+    document.querySelector(".loader-container").style.display = "block";
+    document.querySelector(".uniq-TS-launch-page-container-m").style.display = "none";
   }
 };
+
 
 // Mobile     ===================================================================================================================================================
 

@@ -184,7 +184,7 @@ function startAnimation_m() {
   tl_TS_Product_M = gsap.timeline({
     scrollTrigger: {
       trigger: "#uniq-TS-frame_1_m ",
-      start: "top 25%",
+      start: "top 45%",
       end: "top -25%",
       scrub: 1,
       markers: true,

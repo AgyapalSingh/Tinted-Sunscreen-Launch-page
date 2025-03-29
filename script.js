@@ -352,7 +352,7 @@ const context_3_m = canvas_3_m.getContext("2d");
 
 const frames_3_m = {
   currentIndex_3: 0,
-  maxIndex_3: 61,
+  maxIndex_3: 90,
 };
 
 let imagesLoaded_3_m = 0;
@@ -389,12 +389,12 @@ function loadImage_3_m(index) {
       return;
     }
 
-    drawImageOnCanvas(img_3_m);
+    drawImageOnCanvas_3(img_3_m);
     frames_3_m.currentIndex_3 = index;
   }
 }
 
-function drawImageOnCanvas(img_3_m) {
+function drawImageOnCanvas_3(img_3_m) {
   // Detect if the device is mobile (commonly screens smaller than 768px)
   const isMobile = window.innerWidth <= 768;
 
@@ -433,7 +433,7 @@ function drawImageOnCanvas(img_3_m) {
 
 // Optimize resizing by updating canvas size only on window resize
 window.addEventListener("resize", () => {
-  drawImageOnCanvas(images_3_m[frames_3_m.currentIndex_3]);
+  drawImageOnCanvas_3(images_3_m[frames_3_m.currentIndex_3]);
 });
 
 // Optimize resizing by updating canvas size only on window resize

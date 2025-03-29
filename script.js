@@ -360,9 +360,10 @@ const images_3_m = [];
 
 function preloadImages_3_m() {
   for (var i = 0; i < frames_3_m.maxIndex_3; i++) {
-    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Shades${i
+    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BronzeBliss${i
       .toString()
-      .padStart(3, "0")}.png?v=1743147385`;
+      .padStart(4, "0")}.png?v=1743247436`;
+
 
     const img_3_m = new Image();
 

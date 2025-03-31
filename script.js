@@ -256,7 +256,7 @@ function loadImage_2_m(index) {
     const img_2_m = images_2_m[index];
 
     if (!img_2_m.complete) {
-      img_2_m.onload = () => drawImageOnCanvas(img_2_m);
+      img_2_m.onload = () => drawImageOnCanvas_2(img_2_m);
       return;
     }
 
@@ -385,7 +385,7 @@ function loadImage_3_m(index) {
 
     // Ensure the image is fully loaded before drawing
     if (!img_3_m.complete) {
-      img_3_m.onload = () => drawImageOnCanvas(img_3_m);
+      img_3_m.onload = () => drawImageOnCanvas_3(img_3_m);
       return;
     }
 

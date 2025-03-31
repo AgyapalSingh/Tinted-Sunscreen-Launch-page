@@ -12,88 +12,10 @@ document.onreadystatechange = function () {
 
 // Mobile     ===================================================================================================================================================
 
-// var tl_TS_Hook_M = gsap.timeline();
 var tl_TS_Product_M = gsap.timeline();
 var tl_TS_Product_M_2 = gsap.timeline();
 var tl_TS_Product_M_3 = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
-
-// tl_TS_Hook_M.to(".title-part-Hook-1", {
-//   opacity: 0,
-//   scale: 1.5,
-//   scrollTrigger: {
-//     trigger: ".uniq-TS-Hook-m ",
-//     start: "top 5%",
-//     end: "top 0%",
-//     scrub: 1,
-//   },
-// });
-
-// tl_TS_Hook_M.to(".title-part-Hook-2", {
-//   opacity: 1,
-//   scale: 1.5,
-//   scrollTrigger: {
-//     trigger: ".uniq-TS-Hook-m ",
-//     start: "top 0%",
-//     end: "top -15%",
-//     scrub: 1,
-//   },
-// });
-
-// tl_TS_Hook_M.to(".title-part-Hook-2", {
-//   opacity: 0,
-//   scale: 1,
-//   scrollTrigger: {
-//     trigger: ".uniq-TS-Hook-m ",
-//     start: "top -15%",
-//     end: "top -20%",
-//     scrub: 1,
-//   },
-// });
-
-// tl_TS_Hook_M.to(".title-part-Hook-3", {
-//   opacity: 1,
-//   scale: 1.5,
-//   scrollTrigger: {
-//     trigger: ".uniq-TS-Hook-m ",
-//     start: "top -20%",
-//     end: "top -35%",
-//     scrub: 1,
-//   },
-// });
-
-// tl_TS_Hook_M.to(".title-part-Hook-3", {
-//   opacity: 0,
-//   scale: 1,
-//   scrollTrigger: {
-//     trigger: ".uniq-TS-Hook-m ",
-//     start: "top -35%",
-//     end: "top -40%",
-//     scrub: 1,
-//   },
-// });
-
-// tl_TS_Hook_M.to(".title-part-Hook-4", {
-//   opacity: 1,
-//   scale: 1.5,
-//   scrollTrigger: {
-//     trigger: ".uniq-TS-Hook-m ",
-//     start: "top -40%",
-//     end: "top -55%",
-//     scrub: 1,
-//   },
-// });
-
-// tl_TS_Hook_M.to(".title-part-Hook-4", {
-//   opacity: 0,
-//   scale: 1,
-//   scrollTrigger: {
-//     trigger: ".uniq-TS-Hook-m ",
-//     start: "top -55%",
-//     end: "top -60%",
-//     scrub: 1,
-//   },
-// });
 
 //  CANVAS 1
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
@@ -143,7 +65,6 @@ function loadImage_1_m(index) {
 
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
-  // canvas_1_m.width = window.innerWidth / 1.01;
   canvas_1_m.width = isMobile
     ? window.innerWidth / 1.01
     : window.innerWidth / 2;
@@ -161,10 +82,6 @@ function drawImageOnCanvas_1(img_1_m) {
   const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1);
   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
-
-  // const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-  // const centerY_1 = (canvasHeight_1 - imageHeight_1) / 2;
-
   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
   const centerY_1 = canvasHeight_1 - imageHeight_1;
 
@@ -175,14 +92,8 @@ function drawImageOnCanvas_1(img_1_m) {
     imageWidth_1,
     imageHeight_1
   );
-
-  // Draw border
-  // context_1_m.lineWidth = 2;
-  // context_1_m.strokeStyle = "#183457";
-  // context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 }
 
-// Optimize resizing by updating canvas size only on window resize
 window.addEventListener("resize", () => {
   loadImage_1_m(frames_1_m.currentIndex_1);
 });
@@ -202,7 +113,6 @@ function startAnimation_m() {
           start: isMobile ? "top 45%" : "top 20%",
           end: isMobile ? "top -25%" : "top -45%",
           scrub: 1,
-          // markers: true,
         },
       });
 
@@ -250,7 +160,6 @@ function preloadImages_2_m() {
   }
 }
 
-
 function loadImage_2_m(index) {
   if (index >= 0 && index < frames_2_m.maxIndex_2) {
     const img_2_m = images_2_m[index];
@@ -265,10 +174,8 @@ function loadImage_2_m(index) {
   }
 }
 
-
 function drawImageOnCanvas_2(img_2_m) {
   const isMobile = window.innerWidth <= 768;
-  // canvas_1_m.width = window.innerWidth / 1.01;
   canvas_2_m.width = isMobile
     ? window.innerWidth / 1.01
     : window.innerWidth / 2;
@@ -286,10 +193,6 @@ function drawImageOnCanvas_2(img_2_m) {
   const maxSize_2 = Math.min(canvasWidth_2 * 1, canvasHeight_2 * 1);
   const imageWidth_2 = Math.min(maxSize_2, img_2_m.width);
   const imageHeight_2 = Math.min(maxSize_2, img_2_m.height);
-
-  // const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-  // const centerY_1 = (canvasHeight_1 - imageHeight_1) / 2;
-
   const centerX_2 = (canvasWidth_2 - imageWidth_2) / 2;
   const centerY_2 = canvasHeight_2 - imageHeight_2;
 
@@ -300,11 +203,6 @@ function drawImageOnCanvas_2(img_2_m) {
     imageWidth_2,
     imageHeight_2
   );
-
-  // Draw border
-  // context_1_m.lineWidth = 2;
-  // context_1_m.strokeStyle = "#183457";
-  // context_1_m.strokeRect(centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 }
 
 window.addEventListener("resize", () => {
@@ -326,7 +224,6 @@ function startAnimation_2_m() {
           start: isMobile ? "top 45%" : "top 30%",
           end: isMobile ? "top 0%" : "top 0%",
           scrub: 1,
-          // markers: true,
         },
       });
 
@@ -342,9 +239,6 @@ function startAnimation_2_m() {
 
 preloadImages_2_m();
 
-
-
-
 // CANVAS 3
 
 const canvas_3_m = document.querySelector("#uniq-TS-frame_3_m");
@@ -356,26 +250,30 @@ const frames_3_m = {
 };
 
 let imagesLoaded_3_m = 0;
-const images_3_m = [];
+const images_3_m = new Array(frames_3_m.maxIndex_3).fill(null);
 
 function preloadImages_3_m() {
-  for (var i = 0; i < frames_3_m.maxIndex_3; i++) {
+  for (let i = 0; i < frames_3_m.maxIndex_3; i++) {
     const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BronzeBliss${i
       .toString()
       .padStart(4, "0")}.png?v=1743247436`;
 
-
     const img_3_m = new Image();
-
     img_3_m.src = imageUrl_3_m;
+
     img_3_m.onload = () => {
+      images_3_m[i] = img_3_m;
       imagesLoaded_3_m++;
+
       if (imagesLoaded_3_m === frames_3_m.maxIndex_3) {
         loadImage_3_m(frames_3_m.currentIndex_3);
         startAnimation_3_m();
       }
     };
-    images_3_m.push(img_3_m);
+
+    img_3_m.onerror = () => {
+      console.error(`Image failed to load: ${imageUrl_3_m}`);
+    };
   }
 }
 
@@ -383,9 +281,8 @@ function loadImage_3_m(index) {
   if (index >= 0 && index < frames_3_m.maxIndex_3) {
     const img_3_m = images_3_m[index];
 
-    // Ensure the image is fully loaded before drawing
-    if (!img_3_m.complete) {
-      img_3_m.onload = () => drawImageOnCanvas_3(img_3_m);
+    if (!img_3_m || !img_3_m.complete) {
+      console.warn(`Image at index ${index} is not ready yet.`);
       return;
     }
 
@@ -395,11 +292,12 @@ function loadImage_3_m(index) {
 }
 
 function drawImageOnCanvas_3(img_3_m) {
-  // Detect if the device is mobile (commonly screens smaller than 768px)
-  const isMobile = window.innerWidth <= 768;
+  if (!img_3_m) return;
 
-  // Set canvas size
-  canvas_3_m.width = window.innerWidth / 1.1;
+  const isMobile = window.innerWidth <= 768;
+  canvas_3_m.width = isMobile
+    ? window.innerWidth / 1.01
+    : window.innerWidth / 2;
   canvas_3_m.height = isMobile
     ? window.innerHeight / 2
     : window.innerHeight / 1.2;
@@ -408,57 +306,45 @@ function drawImageOnCanvas_3(img_3_m) {
   context_3_m.imageSmoothingEnabled = true;
   context_3_m.imageSmoothingQuality = "high";
 
-  const canvasWidth = canvas_3_m.width;
-  const canvasHeight = canvas_3_m.height;
+  const canvasWidth_3 = canvas_3_m.width;
+  const canvasHeight_3 = canvas_3_m.height;
 
-  // Dynamically scale the image while maintaining aspect ratio
-  const maxSize = Math.min(canvasWidth * 1, canvasHeight * 1); // Scale factor
-  const imageWidth = Math.min(maxSize, img_3_m.width);
-  const imageHeight = Math.min(maxSize, img_3_m.height);
+  const maxSize_3 = Math.min(canvasWidth_3, canvasHeight_3);
+  const imageWidth_3 = Math.min(maxSize_3, img_3_m.width);
+  const imageHeight_3 = Math.min(maxSize_3, img_3_m.height);
 
-  // Position X: Center horizontally
-  const centerX = (canvasWidth - imageWidth) / 2;
+  const centerX_3 = (canvasWidth_3 - imageWidth_3) / 2;
+  const centerY_3 = canvasHeight_3 - imageHeight_3;
 
-  // Position Y: Align the bottom of the image with the bottom of the canvas
-  const centerY = canvasHeight - imageHeight;
-
-  // Draw the image at the computed position
-  context_3_m.drawImage(img_3_m, centerX, centerY, imageWidth, imageHeight);
-
-  // Uncomment if you want a border
-  // context_3_m.lineWidth = 2;
-  // context_3_m.strokeStyle = "#183457";
-  // context_3_m.strokeRect(centerX, centerY, imageWidth, imageHeight);
+  context_3_m.drawImage(
+    img_3_m,
+    centerX_3,
+    centerY_3,
+    imageWidth_3,
+    imageHeight_3
+  );
 }
 
-// Optimize resizing by updating canvas size only on window resize
-window.addEventListener("resize", () => {
-  drawImageOnCanvas_3(images_3_m[frames_3_m.currentIndex_3]);
-});
-
-// Optimize resizing by updating canvas size only on window resize
 window.addEventListener("resize", () => {
   loadImage_3_m(frames_3_m.currentIndex_3);
 });
 
 function startAnimation_3_m() {
-  tl_TS_Product_M_3 = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#uniq-TS-frame_3_m",
-      start: "top 25%",
-      end: "top -25%",
-      scrub: 1,
-      // markers: true,
-      // pin: true
-    },
-  });
-
-  tl_TS_Product_M_3.to(frames_3_m, {
-    currentIndex_3: frames_3_m.maxIndex_3,
-    onUpdate: function () {
-      loadImage_3_m(Math.floor(frames_3_m.currentIndex_3));
-    },
-  });
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#uniq-TS-frame_3_m",
+        start: "top 25%",
+        end: "top -25%",
+        scrub: 1,
+      },
+    })
+    .to(frames_3_m, {
+      currentIndex_3: frames_3_m.maxIndex_3,
+      onUpdate: function () {
+        loadImage_3_m(Math.floor(frames_3_m.currentIndex_3));
+      },
+    });
 }
 
 preloadImages_3_m();
@@ -471,20 +357,17 @@ new Swiper(".product-card-wrapper", {
     disableOnInteraction: false,
   },
 
-  // Pagination bullets
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
     dynamicBullets: true,
   },
 
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 
-  // Responsive breakpoints
   breakpoints: {
     0: {
       slidesPerView: 1,

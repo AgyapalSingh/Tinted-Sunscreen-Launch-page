@@ -219,7 +219,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 #uniq-TS-frame_1_m {
@@ -228,7 +228,7 @@
   align-items: center;
   position: sticky;
   top: 30%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 @media screen and (min-width: 769px) {
@@ -304,7 +304,7 @@
   height: 150vh;
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 #uniq-TS-frame_2_m {
@@ -313,7 +313,7 @@
   align-items: center;
   position: sticky;
   top: 15%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 /* Canvas 3 */
@@ -322,6 +322,7 @@
   height: 150vh;
   display: flex;
   justify-content: center;
+  border: 1px solid red;
 }
 
 #uniq-TS-frame_3_m {
@@ -331,7 +332,7 @@
   text-align: center;
   position: sticky;
   top: 15%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 /* INGREDIENTS */

@@ -324,17 +324,18 @@
   justify-content: end;
   align-items: center;
   position: absolute;
-  top: 200px;
+  top: 150px;
   width: 100%;
 }
 
 .uniq-ani2-benefits-list{
   /* border: 1px solid red; */
-  width: 70%;
+  width: 50%;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   color: #183457;
   margin-bottom: 40px;
+  padding-right: 5px;
 }
 
 .uniq-ani2-benefits-list li {
@@ -345,10 +346,11 @@
 /* Canvas 3 */
 
 .uniq-TS-product-container-m-3 {
-  height: 150vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   /* border: 1px solid red; */
+  position: relative;
 }
 
 #uniq-TS-frame_3_m {
@@ -359,6 +361,33 @@
   position: sticky;
   top: 15%;
   /* border: 1px solid red; */
+}
+
+.uniq-ani3-benefit{
+  /* border: 1px solid red; */
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+}
+
+.uniq-ani3-benefits-list{
+  /* border: 1px solid red; */
+  width: 50%;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #183457;
+  margin-bottom: 40px;
+  padding-left: 5px;
+}
+
+.uniq-ani3-benefits-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
+  text-align: start;
 }
 
 /* INGREDIENTS */

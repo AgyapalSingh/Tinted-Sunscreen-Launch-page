@@ -343,6 +343,13 @@
   margin-bottom: 20px;
   text-align: end;
 }
+
+@media screen and (min-width: 769px) {
+  .uniq-ani2-benefit{
+    justify-content: center;
+    top: -10px;
+  }
+}
 /* Canvas 3 */
 
 .uniq-TS-product-container-m-3 {
@@ -388,6 +395,13 @@
   list-style-type: none;
   margin-bottom: 20px;
   text-align: start;
+}
+
+@media screen and (min-width: 769px) {
+  .uniq-ani3-benefit{
+    justify-content: center;
+    top: -10px;
+  }
 }
 
 /* INGREDIENTS */

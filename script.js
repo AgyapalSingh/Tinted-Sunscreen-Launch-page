@@ -398,7 +398,7 @@ gsap.from(".uniq-TS-benefits-list li", {
   },
 });
 
-// Canvas - Desktop Benefits List Ani
+// Canvas -  Benefits List Ani
 
 gsap.from(".uniq-TS-canvas-benefits-list li", {
   y: 10,
@@ -459,37 +459,54 @@ tl_order
 
   // Canvas 2 -  Benefits List Ani
 
-gsap.from(".uniq-ani2-benefits-list li", {
-  y: 10,
-  duration: 0.5,
-  opacity: 0,
-  delay: -1,
-  stagger: 1,
-
-  scrollTrigger: {
-    trigger: ".uniq-ani2-benefits-list",
-    start: "top 50%",
-    end: "top 35%",
-    scrub: 1,
-    // markers: true,
-  },
-});
+  gsap.matchMedia().add(
+    {
+      isDesktop: "(min-width: 768px)", 
+      isMobile: "(max-width: 769px)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
+  
+      gsap.from(".uniq-ani2-benefits-list li", {
+        y: 10,
+        duration: 0.5,
+        opacity: 0,
+        stagger: 1,
+        scrollTrigger: {
+          trigger: ".uniq-ani2-benefits-list",
+          start: isDesktop ? "top 70%" : "top 50%",
+          end: isDesktop ? "top 50%" : "top 35%",
+          scrub: 1,
+          // markers: true,
+        },
+      });
+    }
+  );
+  
 
 
   // Canvas 3 -  Benefits List Ani
 
-  gsap.from(".uniq-ani3-benefits-list li", {
-    y: 10,
-    duration: 0.5,
-    opacity: 0,
-    delay: -1,
-    stagger: 1,
-  
-    scrollTrigger: {
-      trigger: ".uniq-ani3-benefits-list",
-      start: "top 50%",
-      end: "top 35%",
-      scrub: 1,
-      // markers: true,
+  gsap.matchMedia().add(
+    {
+      isDesktop: "(min-width: 768px)", 
+      isMobile: "(max-width: 769px)",
     },
-  });
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
+  
+      gsap.from(".uniq-ani3-benefits-list li", {
+        y: 10,
+        duration: 0.5,
+        opacity: 0,
+        stagger: 1,
+        scrollTrigger: {
+          trigger: ".uniq-ani3-benefits-list",
+          start: isDesktop ? "top 70%" : "top 50%",
+          end: isDesktop ? "top 50%" : "top 35%",
+          scrub: 1,
+          // markers: true,
+        },
+      });
+    }
+  );

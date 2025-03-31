@@ -63,61 +63,61 @@ function loadImage_1_m(index) {
   }
 }
 
-// function drawImageOnCanvas_1(img_1_m) {
-//   const isMobile = window.innerWidth <= 768;
-//   canvas_1_m.width = isMobile
-//     ? window.innerWidth / 1.01
-//     : window.innerWidth / 2;
-//   canvas_1_m.height = isMobile
-//     ? window.innerHeight / 2
-//     : window.innerHeight / 1.2;
-
-//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-//   context_1_m.imageSmoothingEnabled = true;
-//   context_1_m.imageSmoothingQuality = "high";
-
-//   const canvasWidth_1 = canvas_1_m.width;
-//   const canvasHeight_1 = canvas_1_m.height;
-
-//   const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1);
-//   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
-//   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
-//   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-//   const centerY_1 = canvasHeight_1 - imageHeight_1;
-
-//   context_1_m.drawImage(
-//     img_1_m,
-//     centerX_1,
-//     centerY_1,
-//     imageWidth_1,
-//     imageHeight_1
-//   );
-// }
-
-
-
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
-  const dpr = window.devicePixelRatio || 1;
+  canvas_1_m.width = isMobile
+    ? window.innerWidth / 1.01
+    : window.innerWidth / 2;
+  canvas_1_m.height = isMobile
+    ? window.innerHeight / 2
+    : window.innerHeight / 1.2;
 
-  canvas_1_m.width = (isMobile ? window.innerWidth / 1/1 : window.innerWidth / 2) * dpr;
-  canvas_1_m.height = (isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2) * dpr;
-  
-  context_1_m.scale(dpr, dpr); 
   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-  context_1_m.imageSmoothingEnabled = false;
+  context_1_m.imageSmoothingEnabled = true;
+  context_1_m.imageSmoothingQuality = "high";
 
-  const canvasWidth_1 = canvas_1_m.width / dpr;
-  const canvasHeight_1 = canvas_1_m.height / dpr;
+  const canvasWidth_1 = canvas_1_m.width;
+  const canvasHeight_1 = canvas_1_m.height;
 
-  const maxSize_1 = Math.min(canvasWidth_1, canvasHeight_1);
+  const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1);
   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
   const centerY_1 = canvasHeight_1 - imageHeight_1;
 
-  context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+  context_1_m.drawImage(
+    img_1_m,
+    centerX_1,
+    centerY_1,
+    imageWidth_1,
+    imageHeight_1
+  );
 }
+
+
+
+// function drawImageOnCanvas_1(img_1_m) {
+//   const isMobile = window.innerWidth <= 768;
+//   const dpr = window.devicePixelRatio || 1;
+
+//   canvas_1_m.width = (isMobile ? window.innerWidth / 1/1 : window.innerWidth / 2) * dpr;
+//   canvas_1_m.height = (isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2) * dpr;
+  
+//   context_1_m.scale(dpr, dpr); 
+//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
+//   context_1_m.imageSmoothingEnabled = false;
+
+//   const canvasWidth_1 = canvas_1_m.width / dpr;
+//   const canvasHeight_1 = canvas_1_m.height / dpr;
+
+//   const maxSize_1 = Math.min(canvasWidth_1, canvasHeight_1);
+//   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
+//   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
+//   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
+//   const centerY_1 = canvasHeight_1 - imageHeight_1;
+
+//   context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+// }
 
 
 window.addEventListener("resize", () => {

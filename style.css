@@ -219,7 +219,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #uniq-TS-frame_1_m {
@@ -228,7 +228,7 @@
   align-items: center;
   position: sticky;
   top: 30%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 @media screen and (min-width: 769px) {
@@ -301,10 +301,11 @@
 /* Canvas 2 */
 
 .uniq-TS-product-container-m-2 {
-  height: 150vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  position: relative;
 }
 
 #uniq-TS-frame_2_m {
@@ -313,16 +314,41 @@
   align-items: center;
   position: sticky;
   top: 15%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
+.uniq-ani2-benefit{
+  /* border: 1px solid red; */
+  height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  top: 200px;
+  width: 100%;
+}
+
+.uniq-ani2-benefits-list{
+  /* border: 1px solid red; */
+  width: 70%;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #183457;
+  margin-bottom: 40px;
+}
+
+.uniq-ani2-benefits-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
+  text-align: end;
+}
 /* Canvas 3 */
 
 .uniq-TS-product-container-m-3 {
   height: 150vh;
   display: flex;
   justify-content: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #uniq-TS-frame_3_m {
@@ -332,7 +358,7 @@
   text-align: center;
   position: sticky;
   top: 15%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* INGREDIENTS */

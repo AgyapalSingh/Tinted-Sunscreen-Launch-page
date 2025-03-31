@@ -454,3 +454,23 @@ tl_order
       toggleActions: "play none none reverse",
     },
   });
+
+
+
+  // Canvas 2 -  Benefits List Ani
+
+gsap.from(".uniq-ani2-benefits-list li", {
+  y: 10,
+  duration: 0.5,
+  opacity: 0,
+  delay: -1,
+  stagger: 1,
+
+  scrollTrigger: {
+    trigger: ".uniq-ani2-benefits-list",
+    start: "top 50%",
+    end: "top 35%",
+    scrub: 1,
+    // markers: true,
+  },
+});

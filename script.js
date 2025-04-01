@@ -463,10 +463,11 @@ tl_order
     opacity: 0,
     zIndex: -1,
     scrollTrigger: {
-      trigger: ".uniq-TS-product-result",
+      trigger: ".uniq-TS-product-ingredients",
       start: "top 80%",
       end: "top 50%",
       scrub: 1,
+      // markers: true,
     },
   })
   .to(".pre-order", {

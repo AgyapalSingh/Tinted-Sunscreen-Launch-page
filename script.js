@@ -54,7 +54,7 @@ function loadImage_1_m(index) {
     const img_1_m = images_1_m[index];
 
     if (!img_1_m.complete) {
-      img_1_m.onload = () => drawImageOnCanvas(img_1_m);
+      img_1_m.onload = () => drawImageOnCanvas_1(img_1_m);
       return;
     }
 
@@ -73,7 +73,7 @@ function drawImageOnCanvas_1(img_1_m) {
     : window.innerHeight / 1.2;
 
   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-  context_1_m.imageSmoothingEnabled = false;
+  context_1_m.imageSmoothingEnabled = true;
   context_1_m.imageSmoothingQuality = "high";
 
   const canvasWidth_1 = canvas_1_m.width;

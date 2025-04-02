@@ -18,6 +18,145 @@ var tl_TS_Product_M_3 = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
 //  CANVAS 1
+// const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
+// const context_1_m = canvas_1_m.getContext("2d");
+
+// const frames_1_m = {
+//   currentIndex_1: 0,
+//   maxIndex_1: 90,
+// };
+
+// let imagesLoaded_1_m = 0;
+// const images_1_m = [];
+
+// function preloadImages_1_m() {
+//   for (var i = 0; i < frames_1_m.maxIndex_1; i++) {
+//     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TS${i
+//       .toString()
+//       .padStart(4, "0")}.png?v=1743159947`;
+
+//     const img_1_m = new Image();
+
+//     img_1_m.src = imageUrl_1_m;
+//     img_1_m.onload = () => {
+//       imagesLoaded_1_m++;
+//       if (imagesLoaded_1_m === frames_1_m.maxIndex_1) {
+//         loadImage_1_m(frames_1_m.currentIndex_1);
+//         startAnimation_m();
+//       }
+//     };
+//     images_1_m.push(img_1_m);
+//   }
+// }
+
+// function loadImage_1_m(index) {
+//   if (index >= 0 && index < frames_1_m.maxIndex_1) {
+//     const img_1_m = images_1_m[index];
+
+//     if (!img_1_m.complete) {
+//       img_1_m.onload = () => drawImageOnCanvas_1(img_1_m);
+//       return;
+//     }
+
+//     drawImageOnCanvas_1(img_1_m);
+//     frames_1_m.currentIndex_1 = index;
+//   }
+// }
+
+// function drawImageOnCanvas_1(img_1_m) {
+//   const isMobile = window.innerWidth <= 768;
+//   canvas_1_m.width = isMobile
+//     ? window.innerWidth / 1.01
+//     : window.innerWidth / 2;
+//   canvas_1_m.height = isMobile
+//     ? window.innerHeight / 2
+//     : window.innerHeight / 1.2;
+
+//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
+//   context_1_m.imageSmoothingEnabled = true;
+//   context_1_m.imageSmoothingQuality = "high";
+
+//   const canvasWidth_1 = canvas_1_m.width;
+//   const canvasHeight_1 = canvas_1_m.height;
+
+//   const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1);
+//   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
+//   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
+//   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
+//   const centerY_1 = canvasHeight_1 - imageHeight_1;
+
+//   context_1_m.drawImage(
+//     img_1_m,
+//     centerX_1,
+//     centerY_1,
+//     imageWidth_1,
+//     imageHeight_1
+//   );
+// }
+
+
+
+// // function drawImageOnCanvas_1(img_1_m) {
+// //   const isMobile = window.innerWidth <= 768;
+// //   const dpr = window.devicePixelRatio || 1;
+
+// //   canvas_1_m.width = (isMobile ? window.innerWidth / 1/1 : window.innerWidth / 2) * dpr;
+// //   canvas_1_m.height = (isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2) * dpr;
+  
+// //   context_1_m.scale(dpr, dpr); 
+// //   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
+// //   context_1_m.imageSmoothingEnabled = false;
+
+// //   const canvasWidth_1 = canvas_1_m.width / dpr;
+// //   const canvasHeight_1 = canvas_1_m.height / dpr;
+
+// //   const maxSize_1 = Math.min(canvasWidth_1, canvasHeight_1);
+// //   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
+// //   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
+// //   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
+// //   const centerY_1 = canvasHeight_1 - imageHeight_1;
+
+// //   context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+// // }
+
+
+// window.addEventListener("resize", () => {
+//   loadImage_1_m(frames_1_m.currentIndex_1);
+// });
+
+// function startAnimation_m() {
+//   gsap.matchMedia().add(
+//     {
+//       isMobile: "(max-width: 768px)",
+//       isDesktop: "(min-width: 769px)",
+//     },
+//     (context) => {
+//       let { isMobile, isDesktop } = context.conditions;
+
+//       tl_TS_Product_M = gsap.timeline({
+//         scrollTrigger: {
+//           trigger: "#uniq-TS-frame_1_m",
+//           start: isMobile ? "top 45%" : "top 20%",
+//           end: isMobile ? "top -25%" : "top -45%",
+//           scrub: 1,
+//         },
+//       });
+
+//       tl_TS_Product_M.to(frames_1_m, {
+//         currentIndex_1: frames_1_m.maxIndex_1,
+//         onUpdate: function () {
+//           loadImage_1_m(Math.floor(frames_1_m.currentIndex_1));
+//         },
+//       });
+//     }
+//   );
+// }
+
+// preloadImages_1_m();
+
+
+
+
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
 const context_1_m = canvas_1_m.getContext("2d");
 
@@ -30,14 +169,14 @@ let imagesLoaded_1_m = 0;
 const images_1_m = [];
 
 function preloadImages_1_m() {
-  for (var i = 0; i < frames_1_m.maxIndex_1; i++) {
+  for (let i = 0; i < frames_1_m.maxIndex_1; i++) {
     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TS${i
       .toString()
       .padStart(4, "0")}.png?v=1743159947`;
 
     const img_1_m = new Image();
-
     img_1_m.src = imageUrl_1_m;
+
     img_1_m.onload = () => {
       imagesLoaded_1_m++;
       if (imagesLoaded_1_m === frames_1_m.maxIndex_1) {
@@ -65,60 +204,24 @@ function loadImage_1_m(index) {
 
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
-  canvas_1_m.width = isMobile
-    ? window.innerWidth / 1.01
-    : window.innerWidth / 2;
-  canvas_1_m.height = isMobile
-    ? window.innerHeight / 2
-    : window.innerHeight / 1.2;
+
+  // Set canvas size based on device width
+  canvas_1_m.width = isMobile ? window.innerWidth : window.innerWidth / 2;
+  canvas_1_m.height = isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2;
 
   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-  context_1_m.imageSmoothingEnabled = true;
-  context_1_m.imageSmoothingQuality = "high";
+  context_1_m.imageSmoothingEnabled = false; // Disable anti-aliasing for better quality
 
-  const canvasWidth_1 = canvas_1_m.width;
-  const canvasHeight_1 = canvas_1_m.height;
+  // Scale the image while maintaining aspect ratio
+  const scale = Math.min(canvas_1_m.width / img_1_m.width, canvas_1_m.height / img_1_m.height);
+  const imageWidth_1 = img_1_m.width * scale;
+  const imageHeight_1 = img_1_m.height * scale;
 
-  const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1);
-  const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
-  const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
-  const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-  const centerY_1 = canvasHeight_1 - imageHeight_1;
+  const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
+  const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
 
-  context_1_m.drawImage(
-    img_1_m,
-    centerX_1,
-    centerY_1,
-    imageWidth_1,
-    imageHeight_1
-  );
+  context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 }
-
-
-
-// function drawImageOnCanvas_1(img_1_m) {
-//   const isMobile = window.innerWidth <= 768;
-//   const dpr = window.devicePixelRatio || 1;
-
-//   canvas_1_m.width = (isMobile ? window.innerWidth / 1/1 : window.innerWidth / 2) * dpr;
-//   canvas_1_m.height = (isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2) * dpr;
-  
-//   context_1_m.scale(dpr, dpr); 
-//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-//   context_1_m.imageSmoothingEnabled = false;
-
-//   const canvasWidth_1 = canvas_1_m.width / dpr;
-//   const canvasHeight_1 = canvas_1_m.height / dpr;
-
-//   const maxSize_1 = Math.min(canvasWidth_1, canvasHeight_1);
-//   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
-//   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
-//   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-//   const centerY_1 = canvasHeight_1 - imageHeight_1;
-
-//   context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
-// }
-
 
 window.addEventListener("resize", () => {
   loadImage_1_m(frames_1_m.currentIndex_1);
@@ -145,7 +248,7 @@ function startAnimation_m() {
       tl_TS_Product_M.to(frames_1_m, {
         currentIndex_1: frames_1_m.maxIndex_1,
         onUpdate: function () {
-          loadImage_1_m(Math.floor(frames_1_m.currentIndex_1));
+          loadImage_1_m(Math.round(frames_1_m.currentIndex_1)); // Use Math.round() for better accuracy
         },
       });
     }
@@ -153,6 +256,7 @@ function startAnimation_m() {
 }
 
 preloadImages_1_m();
+
 
 // CANVAS 2
 

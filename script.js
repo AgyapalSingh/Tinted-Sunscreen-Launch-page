@@ -94,16 +94,14 @@ gsap.registerPlugin(ScrollTrigger);
 //   );
 // }
 
-
-
 // // function drawImageOnCanvas_1(img_1_m) {
 // //   const isMobile = window.innerWidth <= 768;
 // //   const dpr = window.devicePixelRatio || 1;
 
 // //   canvas_1_m.width = (isMobile ? window.innerWidth / 1/1 : window.innerWidth / 2) * dpr;
 // //   canvas_1_m.height = (isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2) * dpr;
-  
-// //   context_1_m.scale(dpr, dpr); 
+
+// //   context_1_m.scale(dpr, dpr);
 // //   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
 // //   context_1_m.imageSmoothingEnabled = false;
 
@@ -118,7 +116,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 // //   context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 // // }
-
 
 // window.addEventListener("resize", () => {
 //   loadImage_1_m(frames_1_m.currentIndex_1);
@@ -153,9 +150,6 @@ gsap.registerPlugin(ScrollTrigger);
 // }
 
 // preloadImages_1_m();
-
-
-
 
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
 const context_1_m = canvas_1_m.getContext("2d");
@@ -202,26 +196,100 @@ function loadImage_1_m(index) {
   }
 }
 
+
+// 3-4-25
+
+// function drawImageOnCanvas_1(img_1_m) {
+//   const isMobile = window.innerWidth <= 768;
+//   console.log("Image Data");
+
+//   console.log(isMobile);
+
+//   canvas_1_m.width = isMobile ? window.innerWidth : window.innerWidth / 2;
+//   console.log(canvas_1_m.width, "Canvas Width");
+
+//   canvas_1_m.height = isMobile
+//     ? window.innerHeight / 2
+//     : window.innerHeight / 1.2;
+//   console.log(canvas_1_m.height, "Canvas Height");
+
+//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
+//   context_1_m.imageSmoothingEnabled = false;
+
+//   console.log(img_1_m.width, "Image Width");
+//   console.log(img_1_m.height, "Image Height");
+
+//   const scale = Math.min(
+//     canvas_1_m.width / img_1_m.width,
+//     canvas_1_m.height / img_1_m.height
+//   );
+//   console.log(canvas_1_m.width / img_1_m.width, "canvas.width / img.width");
+//   console.log(canvas_1_m.height / img_1_m.height, "canvas.height / img.height");
+
+//   const imageWidth_1 = img_1_m.width * scale;
+//   const imageHeight_1 = img_1_m.height * scale;
+//   console.log(imageWidth_1, "Image New Width");
+//   console.log(imageHeight_1, "Image New Height");
+
+//   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
+//   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
+
+//   context_1_m.drawImage(
+//     img_1_m,
+//     centerX_1,
+//     centerY_1,
+//     imageWidth_1,
+//     imageHeight_1
+//   );
+// }
+
+
+
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
+  const devicePixelRatio = window.devicePixelRatio || 1;
 
-  // Set canvas size based on device width
-  canvas_1_m.width = isMobile ? window.innerWidth : window.innerWidth / 2;
-  canvas_1_m.height = isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2;
+  const canvasWidth = isMobile ? window.innerWidth - 3 : window.innerWidth / 2;
 
-  context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-  context_1_m.imageSmoothingEnabled = false; // Disable anti-aliasing for better quality
+  // Set high-resolution canvas
+  canvas_1_m.width = canvasWidth * devicePixelRatio;
+  canvas_1_m.height = canvas_1_m.width;
 
-  // Scale the image while maintaining aspect ratio
-  const scale = Math.min(canvas_1_m.width / img_1_m.width, canvas_1_m.height / img_1_m.height);
-  const imageWidth_1 = img_1_m.width * scale;
-  const imageHeight_1 = img_1_m.height * scale;
+  // Scale it down visually
+  canvas_1_m.style.width = `${canvasWidth}px`;
+  canvas_1_m.style.height = `${canvasWidth}px`;
+
+  // Enable high-quality rendering
+  context_1_m.imageSmoothingEnabled = true;
+  context_1_m.imageSmoothingQuality = "high";
+
+  // Create a temporary offscreen canvas for high-quality scaling
+  const tempCanvas = document.createElement("canvas");
+  const tempCtx = tempCanvas.getContext("2d");
+
+  // Set the temporary canvas size 2x or 4x bigger for better scaling
+  tempCanvas.width = img_1_m.width * 2; // Increase resolution
+  tempCanvas.height = img_1_m.height * 2;
+
+  // Draw the image at a higher resolution first
+  tempCtx.drawImage(img_1_m, 0, 0, tempCanvas.width, tempCanvas.height);
+
+  // Scale down the high-res image to the final canvas
+  const scale = Math.min(
+    canvas_1_m.width / tempCanvas.width,
+    canvas_1_m.height / tempCanvas.height
+  );
+
+  const imageWidth_1 = tempCanvas.width * scale;
+  const imageHeight_1 = tempCanvas.height * scale;
 
   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
 
-  context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+  // Now draw the high-res image to the final canvas
+  context_1_m.drawImage(tempCanvas, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
 }
+
 
 window.addEventListener("resize", () => {
   loadImage_1_m(frames_1_m.currentIndex_1);
@@ -256,7 +324,6 @@ function startAnimation_m() {
 }
 
 preloadImages_1_m();
-
 
 // CANVAS 2
 
@@ -586,58 +653,54 @@ tl_order
     },
   });
 
+// Canvas 2 -  Benefits List Ani
 
+gsap.matchMedia().add(
+  {
+    isDesktop: "(min-width: 768px)",
+    isMobile: "(max-width: 769px)",
+  },
+  (context) => {
+    let { isDesktop, isMobile } = context.conditions;
 
-  // Canvas 2 -  Benefits List Ani
+    gsap.from(".uniq-ani2-benefits-list li", {
+      y: 10,
+      duration: 0.5,
+      opacity: 0,
+      stagger: 1,
+      scrollTrigger: {
+        trigger: ".uniq-ani2-benefits-list",
+        start: isDesktop ? "top 70%" : "top 50%",
+        end: isDesktop ? "top 50%" : "top 35%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+  }
+);
 
-  gsap.matchMedia().add(
-    {
-      isDesktop: "(min-width: 768px)", 
-      isMobile: "(max-width: 769px)",
-    },
-    (context) => {
-      let { isDesktop, isMobile } = context.conditions;
-  
-      gsap.from(".uniq-ani2-benefits-list li", {
-        y: 10,
-        duration: 0.5,
-        opacity: 0,
-        stagger: 1,
-        scrollTrigger: {
-          trigger: ".uniq-ani2-benefits-list",
-          start: isDesktop ? "top 70%" : "top 50%",
-          end: isDesktop ? "top 50%" : "top 35%",
-          scrub: 1,
-          // markers: true,
-        },
-      });
-    }
-  );
-  
+// Canvas 3 -  Benefits List Ani
 
+gsap.matchMedia().add(
+  {
+    isDesktop: "(min-width: 768px)",
+    isMobile: "(max-width: 769px)",
+  },
+  (context) => {
+    let { isDesktop, isMobile } = context.conditions;
 
-  // Canvas 3 -  Benefits List Ani
-
-  gsap.matchMedia().add(
-    {
-      isDesktop: "(min-width: 768px)", 
-      isMobile: "(max-width: 769px)",
-    },
-    (context) => {
-      let { isDesktop, isMobile } = context.conditions;
-  
-      gsap.from(".uniq-ani3-benefits-list li", {
-        y: 10,
-        duration: 0.5,
-        opacity: 0,
-        stagger: 1,
-        scrollTrigger: {
-          trigger: ".uniq-ani3-benefits-list",
-          start: isDesktop ? "top 70%" : "top 50%",
-          end: isDesktop ? "top 50%" : "top 35%",
-          scrub: 1,
-          // markers: true,
-        },
-      });
-    }
-  );
+    gsap.from(".uniq-ani3-benefits-list li", {
+      y: 10,
+      duration: 0.5,
+      opacity: 0,
+      stagger: 1,
+      scrollTrigger: {
+        trigger: ".uniq-ani3-benefits-list",
+        start: isDesktop ? "top 70%" : "top 50%",
+        end: isDesktop ? "top 50%" : "top 35%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+  }
+);

@@ -247,17 +247,29 @@ function loadImage_1_m(index) {
 
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
+
+  console.log("Image Data");
+
+  console.log(isMobile);
   const devicePixelRatio = window.devicePixelRatio || 1;
+  console.log(devicePixelRatio, "DPR");
 
-  const canvasWidth = isMobile ? window.innerWidth - 3 : window.innerWidth / 2;
 
+  const canvasWidth = isMobile ? window.innerWidth  : window.innerWidth / 2;
+
+  console.log(canvasWidth, "Canvas Width")
   // Set high-resolution canvas
   canvas_1_m.width = canvasWidth * devicePixelRatio;
   canvas_1_m.height = canvas_1_m.width;
 
+  console.log(canvas_1_m.width, "Canvas Width x DPR")
+  console.log(canvas_1_m.height, "Canvas Width = Canvas Height")
   // Scale it down visually
   canvas_1_m.style.width = `${canvasWidth}px`;
   canvas_1_m.style.height = `${canvasWidth}px`;
+
+  console.log(canvas_1_m.style.width, "Canvas Width CSS")
+  console.log(canvas_1_m.style.height, "Canvas Height CSS")
 
   // Enable high-quality rendering
   context_1_m.imageSmoothingEnabled = true;
@@ -269,7 +281,11 @@ function drawImageOnCanvas_1(img_1_m) {
 
   // Set the temporary canvas size 2x or 4x bigger for better scaling
   tempCanvas.width = img_1_m.width * 2; // Increase resolution
+
+  console.log(tempCanvas.width, "Width of Temp Canvas")
+
   tempCanvas.height = img_1_m.height * 2;
+  console.log( tempCanvas.height, "Height of Temp Canvas")
 
   // Draw the image at a higher resolution first
   tempCtx.drawImage(img_1_m, 0, 0, tempCanvas.width, tempCanvas.height);
@@ -280,8 +296,14 @@ function drawImageOnCanvas_1(img_1_m) {
     canvas_1_m.height / tempCanvas.height
   );
 
+  console.log( canvas_1_m.width / tempCanvas.width, "Canvas.width / TempCanvas.width")
+  console.log( canvas_1_m.height / tempCanvas.height , "Canvas.width / TempCanvas.width")
+
   const imageWidth_1 = tempCanvas.width * scale;
+  console.log(imageWidth_1, "Width of Image")
+
   const imageHeight_1 = tempCanvas.height * scale;
+  console.log(imageHeight_1, "Height of Image")
 
   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;

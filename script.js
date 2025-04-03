@@ -272,8 +272,8 @@ function drawImageOnCanvas_1(img_1_m) {
   console.log(canvas_1_m.style.height, "Canvas Height CSS")
 
   // Enable high-quality rendering
-  context_1_m.imageSmoothingEnabled = true;
-  context_1_m.imageSmoothingQuality = "high";
+  // context_1_m.imageSmoothingEnabled = true;
+  // context_1_m.imageSmoothingQuality = "high";
 
   // Create a temporary offscreen canvas for high-quality scaling
   const tempCanvas = document.createElement("canvas");

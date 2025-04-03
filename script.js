@@ -199,118 +199,118 @@ function loadImage_1_m(index) {
 
 // 3-4-25
 
-function drawImageOnCanvas_1(img_1_m) {
-  const isMobile = window.innerWidth <= 768;
-  console.log("Image Data");
-
-  console.log(isMobile);
-
-  canvas_1_m.width = isMobile ? window.innerWidth : window.innerWidth / 2;
-  console.log(canvas_1_m.width, "Canvas Width");
-
-  canvas_1_m.height = isMobile
-    ? window.innerHeight / 2
-    : window.innerHeight / 1.2;
-  console.log(canvas_1_m.height, "Canvas Height");
-
-  context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-  context_1_m.imageSmoothingEnabled = false;
-
-  console.log(img_1_m.width, "Image Width");
-  console.log(img_1_m.height, "Image Height");
-
-  const scale = Math.min(
-    canvas_1_m.width / img_1_m.width,
-    canvas_1_m.height / img_1_m.height
-  );
-  console.log(canvas_1_m.width / img_1_m.width, "canvas.width / img.width");
-  console.log(canvas_1_m.height / img_1_m.height, "canvas.height / img.height");
-
-  const imageWidth_1 = img_1_m.width * scale;
-  const imageHeight_1 = img_1_m.height * scale;
-  console.log(imageWidth_1, "Image New Width");
-  console.log(imageHeight_1, "Image New Height");
-
-  const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
-  const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
-
-  context_1_m.drawImage(
-    img_1_m,
-    centerX_1,
-    centerY_1,
-    imageWidth_1,
-    imageHeight_1
-  );
-}
-
-//  3-4-25 Acc. DPR
-
 // function drawImageOnCanvas_1(img_1_m) {
 //   const isMobile = window.innerWidth <= 768;
-
 //   console.log("Image Data");
 
 //   console.log(isMobile);
-//   const devicePixelRatio = window.devicePixelRatio || 1;
-//   console.log(devicePixelRatio, "DPR");
 
+//   canvas_1_m.width = isMobile ? window.innerWidth : window.innerWidth / 2;
+//   console.log(canvas_1_m.width, "Canvas Width");
 
-//   const canvasWidth = isMobile ? window.innerWidth  : window.innerWidth / 2.5;
+//   canvas_1_m.height = isMobile
+//     ? window.innerHeight / 2
+//     : window.innerHeight / 1.2;
+//   console.log(canvas_1_m.height, "Canvas Height");
 
-//   console.log(canvasWidth, "Canvas Width")
-//   // Set high-resolution canvas
-//   canvas_1_m.width = canvasWidth * devicePixelRatio;
-//   canvas_1_m.height = canvas_1_m.width;
+//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
+//   context_1_m.imageSmoothingEnabled = false;
 
-//   console.log(canvas_1_m.width, "Canvas Width x DPR")
-//   console.log(canvas_1_m.height, "Canvas Width = Canvas Height")
-//   // Scale it down visually
-//   canvas_1_m.style.width = `${canvasWidth}px`;
-//   canvas_1_m.style.height = `${canvasWidth}px`;
+//   console.log(img_1_m.width, "Image Width");
+//   console.log(img_1_m.height, "Image Height");
 
-//   console.log(canvas_1_m.style.width, "Canvas Width CSS")
-//   console.log(canvas_1_m.style.height, "Canvas Height CSS")
-
-//   // Enable high-quality rendering
-//   context_1_m.imageSmoothingEnabled = true;
-//   context_1_m.imageSmoothingQuality = "high";
-
-//   // Create a temporary offscreen canvas for high-quality scaling
-//   const tempCanvas = document.createElement("canvas");
-//   const tempCtx = tempCanvas.getContext("2d");
-
-//   // Set the temporary canvas size 2x or 4x bigger for better scaling
-//   tempCanvas.width = img_1_m.width * 2; // Increase resolution
-
-//   console.log(tempCanvas.width, "Width of Temp Canvas")
-
-//   tempCanvas.height = img_1_m.height * 2;
-//   console.log( tempCanvas.height, "Height of Temp Canvas")
-
-//   // Draw the image at a higher resolution first
-//   tempCtx.drawImage(img_1_m, 0, 0, tempCanvas.width, tempCanvas.height);
-
-//   // Scale down the high-res image to the final canvas
 //   const scale = Math.min(
-//     canvas_1_m.width / tempCanvas.width,
-//     canvas_1_m.height / tempCanvas.height
+//     canvas_1_m.width / img_1_m.width,
+//     canvas_1_m.height / img_1_m.height
 //   );
+//   console.log(canvas_1_m.width / img_1_m.width, "canvas.width / img.width");
+//   console.log(canvas_1_m.height / img_1_m.height, "canvas.height / img.height");
 
-//   console.log( canvas_1_m.width / tempCanvas.width, "Canvas.width / TempCanvas.width")
-//   console.log( canvas_1_m.height / tempCanvas.height , "Canvas.width / TempCanvas.width")
-
-//   const imageWidth_1 = tempCanvas.width * scale;
-//   console.log(imageWidth_1, "Width of Image")
-
-//   const imageHeight_1 = tempCanvas.height * scale;
-//   console.log(imageHeight_1, "Height of Image")
+//   const imageWidth_1 = img_1_m.width * scale;
+//   const imageHeight_1 = img_1_m.height * scale;
+//   console.log(imageWidth_1, "Image New Width");
+//   console.log(imageHeight_1, "Image New Height");
 
 //   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
 //   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
 
-//   // Now draw the high-res image to the final canvas
-//   context_1_m.drawImage(tempCanvas, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+//   context_1_m.drawImage(
+//     img_1_m,
+//     centerX_1,
+//     centerY_1,
+//     imageWidth_1,
+//     imageHeight_1
+//   );
 // }
+
+//  3-4-25 Acc. DPR
+
+function drawImageOnCanvas_1(img_1_m) {
+  const isMobile = window.innerWidth <= 768;
+
+  console.log("Image Data");
+
+  console.log(isMobile);
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  console.log(devicePixelRatio, "DPR");
+
+
+  const canvasWidth = isMobile ? window.innerWidth  : window.innerWidth / 2.5;
+
+  console.log(canvasWidth, "Canvas Width")
+  // Set high-resolution canvas
+  canvas_1_m.width = canvasWidth * devicePixelRatio;
+  canvas_1_m.height = canvas_1_m.width;
+
+  console.log(canvas_1_m.width, "Canvas Width x DPR")
+  console.log(canvas_1_m.height, "Canvas Width = Canvas Height")
+  // Scale it down visually
+  canvas_1_m.style.width = `${canvasWidth}px`;
+  canvas_1_m.style.height = `${canvasWidth}px`;
+
+  console.log(canvas_1_m.style.width, "Canvas Width CSS")
+  console.log(canvas_1_m.style.height, "Canvas Height CSS")
+
+  // Enable high-quality rendering
+  context_1_m.imageSmoothingEnabled = true;
+  context_1_m.imageSmoothingQuality = "high";
+
+  // Create a temporary offscreen canvas for high-quality scaling
+  const tempCanvas = document.createElement("canvas");
+  const tempCtx = tempCanvas.getContext("2d");
+
+  // Set the temporary canvas size 2x or 4x bigger for better scaling
+  tempCanvas.width = img_1_m.width * 2; // Increase resolution
+
+  console.log(tempCanvas.width, "Width of Temp Canvas")
+
+  tempCanvas.height = img_1_m.height * 2;
+  console.log( tempCanvas.height, "Height of Temp Canvas")
+
+  // Draw the image at a higher resolution first
+  tempCtx.drawImage(img_1_m, 0, 0, tempCanvas.width, tempCanvas.height);
+
+  // Scale down the high-res image to the final canvas
+  const scale = Math.min(
+    canvas_1_m.width / tempCanvas.width,
+    canvas_1_m.height / tempCanvas.height
+  );
+
+  console.log( canvas_1_m.width / tempCanvas.width, "Canvas.width / TempCanvas.width")
+  console.log( canvas_1_m.height / tempCanvas.height , "Canvas.width / TempCanvas.width")
+
+  const imageWidth_1 = tempCanvas.width * scale;
+  console.log(imageWidth_1, "Width of Image")
+
+  const imageHeight_1 = tempCanvas.height * scale;
+  console.log(imageHeight_1, "Height of Image")
+
+  const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
+  const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
+
+  // Now draw the high-res image to the final canvas
+  context_1_m.drawImage(tempCanvas, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
+}
 
 
 window.addEventListener("resize", () => {

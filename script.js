@@ -168,7 +168,7 @@ function preloadImages_1_m() {
       .toString()
       .padStart(3, "0")}.png?v=1743752498`;
 
-      // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades025.png?v=1743752498
+    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades025.png?v=1743752498
 
     const img_1_m = new Image();
     img_1_m.src = imageUrl_1_m;
@@ -382,7 +382,9 @@ function preloadImages_2_m() {
       .toString()
       .padStart(3, "0")}.png?v=1743755669`;
 
-      // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/ID075.png?v=1743755669
+    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/ID075.png?v=1743755669
+
+    console.log(imageUrl_2_m);
 
     const img_2_m = new Image();
 
@@ -540,6 +542,7 @@ function startAnimation_2_m() {
           start: isMobile ? "top 45%" : "top 30%",
           end: isMobile ? "top 0%" : "top 0%",
           scrub: 1,
+          // markers: true
         },
       });
 
@@ -555,13 +558,38 @@ function startAnimation_2_m() {
 
 preloadImages_2_m();
 
+if (window.matchMedia("(max-width: 767px)").matches) {
+  gsap.to("#uniq-TS-frame_2_m", {
+    opacity: 1,
+    scale: 1,
+    scrollTrigger: {
+      trigger: "#uniq-TS-frame_2_m",
+      start: "top 55%",
+      end: "top 50%",
+      scrub: 1,
+    }
+  });
+} else {
+  gsap.to("#uniq-TS-frame_2_m", {
+    opacity: 1,
+    scale: 1, 
+    scrollTrigger: {
+      trigger: "#uniq-TS-frame_2_m",
+      start: "top 75%",
+      end: "top 60%",
+      scrub: 1,
+    }
+  });
+}
+
+
 // CANVAS 3
 
 const canvas_3_m = document.querySelector("#uniq-TS-frame_3_m");
 const context_3_m = canvas_3_m.getContext("2d");
 
 const frames_3_m = {
-  currentIndex_3: 0,
+  currentIndex_3: 5,
   maxIndex_3: 50,
 };
 
@@ -574,7 +602,7 @@ function preloadImages_3_m() {
       .toString()
       .padStart(3, "0")}.png?v=1743756831`;
 
-      // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BB010.png?v=1743756831
+    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BB010.png?v=1743756831
 
     const img_3_m = new Image();
     img_3_m.src = imageUrl_3_m;
@@ -666,6 +694,31 @@ function startAnimation_3_m() {
 }
 
 preloadImages_3_m();
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+  gsap.to("#uniq-TS-frame_3_m", {
+    opacity: 1,
+    scale: 1,
+    scrollTrigger: {
+      trigger: "#uniq-TS-frame_3_m",
+      start: "top 55%",
+      end: "top 50%",
+      scrub: 1,
+    }
+  });
+} else {
+  gsap.to("#uniq-TS-frame_3_m", {
+    opacity: 1,
+    scale: 1, 
+    scrollTrigger: {
+      trigger: "#uniq-TS-frame_3_m",
+      start: "top 75%",
+      end: "top 60%",
+      scrub: 1,
+    }
+  });
+}
+
 
 new Swiper(".product-card-wrapper", {
   loop: true,

@@ -17,143 +17,8 @@ var tl_TS_Product_M_2 = gsap.timeline();
 var tl_TS_Product_M_3 = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
-//  CANVAS 1
-// const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
-// const context_1_m = canvas_1_m.getContext("2d");
-
-// const frames_1_m = {
-//   currentIndex_1: 0,
-//   maxIndex_1: 90,
-// };
-
-// let imagesLoaded_1_m = 0;
-// const images_1_m = [];
-
-// function preloadImages_1_m() {
-//   for (var i = 0; i < frames_1_m.maxIndex_1; i++) {
-//     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TS${i
-//       .toString()
-//       .padStart(4, "0")}.png?v=1743159947`;
-
-//     const img_1_m = new Image();
-
-//     img_1_m.src = imageUrl_1_m;
-//     img_1_m.onload = () => {
-//       imagesLoaded_1_m++;
-//       if (imagesLoaded_1_m === frames_1_m.maxIndex_1) {
-//         loadImage_1_m(frames_1_m.currentIndex_1);
-//         startAnimation_m();
-//       }
-//     };
-//     images_1_m.push(img_1_m);
-//   }
-// }
-
-// function loadImage_1_m(index) {
-//   if (index >= 0 && index < frames_1_m.maxIndex_1) {
-//     const img_1_m = images_1_m[index];
-
-//     if (!img_1_m.complete) {
-//       img_1_m.onload = () => drawImageOnCanvas_1(img_1_m);
-//       return;
-//     }
-
-//     drawImageOnCanvas_1(img_1_m);
-//     frames_1_m.currentIndex_1 = index;
-//   }
-// }
-
-// function drawImageOnCanvas_1(img_1_m) {
-//   const isMobile = window.innerWidth <= 768;
-//   canvas_1_m.width = isMobile
-//     ? window.innerWidth / 1.01
-//     : window.innerWidth / 2;
-//   canvas_1_m.height = isMobile
-//     ? window.innerHeight / 2
-//     : window.innerHeight / 1.2;
-
-//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-//   context_1_m.imageSmoothingEnabled = true;
-//   context_1_m.imageSmoothingQuality = "high";
-
-//   const canvasWidth_1 = canvas_1_m.width;
-//   const canvasHeight_1 = canvas_1_m.height;
-
-//   const maxSize_1 = Math.min(canvasWidth_1 * 1, canvasHeight_1 * 1);
-//   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
-//   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
-//   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-//   const centerY_1 = canvasHeight_1 - imageHeight_1;
-
-//   context_1_m.drawImage(
-//     img_1_m,
-//     centerX_1,
-//     centerY_1,
-//     imageWidth_1,
-//     imageHeight_1
-//   );
-// }
-
-// // function drawImageOnCanvas_1(img_1_m) {
-// //   const isMobile = window.innerWidth <= 768;
-// //   const dpr = window.devicePixelRatio || 1;
-
-// //   canvas_1_m.width = (isMobile ? window.innerWidth / 1/1 : window.innerWidth / 2) * dpr;
-// //   canvas_1_m.height = (isMobile ? window.innerHeight / 2 : window.innerHeight / 1.2) * dpr;
-
-// //   context_1_m.scale(dpr, dpr);
-// //   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-// //   context_1_m.imageSmoothingEnabled = false;
-
-// //   const canvasWidth_1 = canvas_1_m.width / dpr;
-// //   const canvasHeight_1 = canvas_1_m.height / dpr;
-
-// //   const maxSize_1 = Math.min(canvasWidth_1, canvasHeight_1);
-// //   const imageWidth_1 = Math.min(maxSize_1, img_1_m.width);
-// //   const imageHeight_1 = Math.min(maxSize_1, img_1_m.height);
-// //   const centerX_1 = (canvasWidth_1 - imageWidth_1) / 2;
-// //   const centerY_1 = canvasHeight_1 - imageHeight_1;
-
-// //   context_1_m.drawImage(img_1_m, centerX_1, centerY_1, imageWidth_1, imageHeight_1);
-// // }
-
-// window.addEventListener("resize", () => {
-//   loadImage_1_m(frames_1_m.currentIndex_1);
-// });
-
-// function startAnimation_m() {
-//   gsap.matchMedia().add(
-//     {
-//       isMobile: "(max-width: 768px)",
-//       isDesktop: "(min-width: 769px)",
-//     },
-//     (context) => {
-//       let { isMobile, isDesktop } = context.conditions;
-
-//       tl_TS_Product_M = gsap.timeline({
-//         scrollTrigger: {
-//           trigger: "#uniq-TS-frame_1_m",
-//           start: isMobile ? "top 45%" : "top 20%",
-//           end: isMobile ? "top -25%" : "top -45%",
-//           scrub: 1,
-//         },
-//       });
-
-//       tl_TS_Product_M.to(frames_1_m, {
-//         currentIndex_1: frames_1_m.maxIndex_1,
-//         onUpdate: function () {
-//           loadImage_1_m(Math.floor(frames_1_m.currentIndex_1));
-//         },
-//       });
-//     }
-//   );
-// }
-
-// preloadImages_1_m();
-
 const canvas_1_m = document.querySelector("#uniq-TS-frame_1_m");
 const context_1_m = canvas_1_m.getContext("2d");
-
 const frames_1_m = {
   currentIndex_1: 0,
   maxIndex_1: 90,
@@ -167,9 +32,6 @@ function preloadImages_1_m() {
     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades${i
       .toString()
       .padStart(3, "0")}.png?v=1743752498`;
-
-    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades025.png?v=1743752498
-
     const img_1_m = new Image();
     img_1_m.src = imageUrl_1_m;
 
@@ -187,12 +49,10 @@ function preloadImages_1_m() {
 function loadImage_1_m(index) {
   if (index >= 0 && index < frames_1_m.maxIndex_1) {
     const img_1_m = images_1_m[index];
-
     if (!img_1_m.complete) {
       img_1_m.onload = () => drawImageOnCanvas_1(img_1_m);
       return;
     }
-
     drawImageOnCanvas_1(img_1_m);
     frames_1_m.currentIndex_1 = index;
   }
@@ -248,54 +108,40 @@ function loadImage_1_m(index) {
 
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
-
   console.log("Image Data");
-
   console.log(isMobile);
   const devicePixelRatio = window.devicePixelRatio || 1;
   console.log(devicePixelRatio, "DPR");
-
   const canvasWidth = isMobile ? window.innerWidth : window.innerWidth / 2.5;
-
   console.log(canvasWidth, "Canvas Width");
   // Set high-resolution canvas
   canvas_1_m.width = canvasWidth * devicePixelRatio;
   canvas_1_m.height = canvas_1_m.width;
-
   console.log(canvas_1_m.width, "Canvas Width x DPR");
   console.log(canvas_1_m.height, "Canvas Width = Canvas Height");
   // Scale it down visually
   canvas_1_m.style.width = `${canvasWidth}px`;
   canvas_1_m.style.height = `${canvasWidth}px`;
-
   console.log(canvas_1_m.style.width, "Canvas Width CSS");
   console.log(canvas_1_m.style.height, "Canvas Height CSS");
-
   // Enable high-quality rendering
   context_1_m.imageSmoothingEnabled = true;
   context_1_m.imageSmoothingQuality = "high";
-
   // Create a temporary offscreen canvas for high-quality scaling
   const tempCanvas = document.createElement("canvas");
   const tempCtx = tempCanvas.getContext("2d");
-
   // Set the temporary canvas size 2x or 4x bigger for better scaling
   tempCanvas.width = img_1_m.width * 2; // Increase resolution
-
   console.log(tempCanvas.width, "Width of Temp Canvas");
-
   tempCanvas.height = img_1_m.height * 2;
   console.log(tempCanvas.height, "Height of Temp Canvas");
-
   // Draw the image at a higher resolution first
   tempCtx.drawImage(img_1_m, 0, 0, tempCanvas.width, tempCanvas.height);
-
   // Scale down the high-res image to the final canvas
   const scale = Math.min(
     canvas_1_m.width / tempCanvas.width,
     canvas_1_m.height / tempCanvas.height
   );
-
   console.log(
     canvas_1_m.width / tempCanvas.width,
     "Canvas.width / TempCanvas.width"
@@ -304,22 +150,12 @@ function drawImageOnCanvas_1(img_1_m) {
     canvas_1_m.height / tempCanvas.height,
     "Canvas.width / TempCanvas.width"
   );
-
   const imageWidth_1 = tempCanvas.width * scale;
   console.log(imageWidth_1, "Width of Image");
-
   const imageHeight_1 = tempCanvas.height * scale;
   console.log(imageHeight_1, "Height of Image");
-
   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
-
-  // context_1_m.shadowColor = "rgba(0, 0, 0, 0.2)";
-  // context_1_m.shadowBlur = 20;
-  // context_1_m.shadowOffsetX = 10;
-  // context_1_m.shadowOffsetY = 10;
-
-  // Now draw the high-res image to the final canvas
   context_1_m.drawImage(
     tempCanvas,
     centerX_1,
@@ -354,7 +190,7 @@ function startAnimation_m() {
       tl_TS_Product_M.to(frames_1_m, {
         currentIndex_1: frames_1_m.maxIndex_1,
         onUpdate: function () {
-          loadImage_1_m(Math.round(frames_1_m.currentIndex_1)); // Use Math.round() for better accuracy
+          loadImage_1_m(Math.round(frames_1_m.currentIndex_1));
         },
       });
     }
@@ -367,27 +203,18 @@ preloadImages_1_m();
 
 const canvas_2_m = document.querySelector("#uniq-TS-frame_2_m");
 const context_2_m = canvas_2_m.getContext("2d");
-
 const frames_2_m = {
   currentIndex_2: 0,
   maxIndex_2: 50,
 };
-
 let imagesLoaded_2_m = 0;
 const images_2_m = [];
-
 function preloadImages_2_m() {
   for (var i = 0; i < frames_2_m.maxIndex_2; i++) {
     const imageUrl_2_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/ID${i
       .toString()
       .padStart(3, "0")}.png?v=1743755669`;
-
-    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/ID075.png?v=1743755669
-
-    console.log(imageUrl_2_m);
-
     const img_2_m = new Image();
-
     img_2_m.src = imageUrl_2_m;
     img_2_m.onload = () => {
       imagesLoaded_2_m++;
@@ -403,12 +230,10 @@ function preloadImages_2_m() {
 function loadImage_2_m(index) {
   if (index >= 0 && index < frames_2_m.maxIndex_2) {
     const img_2_m = images_2_m[index];
-
     if (!img_2_m.complete) {
       img_2_m.onload = () => drawImageOnCanvas_2(img_2_m);
       return;
     }
-
     drawImageOnCanvas_2(img_2_m);
     frames_2_m.currentIndex_2 = index;
   }
@@ -416,54 +241,40 @@ function loadImage_2_m(index) {
 
 function drawImageOnCanvas_2(img_2_m) {
   const isMobile = window.innerWidth <= 768;
-
   console.log("Image Data");
-
   console.log(isMobile);
   const devicePixelRatio_2 = window.devicePixelRatio || 1;
   console.log(devicePixelRatio_2, "DPR");
-
   const canvasWidth_2 = isMobile ? window.innerWidth : window.innerWidth / 2.5;
-
   console.log(canvasWidth_2, "Canvas Width");
   // Set high-resolution canvas
   canvas_2_m.width = canvasWidth_2 * devicePixelRatio_2;
   canvas_2_m.height = canvas_2_m.width;
-
   console.log(canvas_2_m.width, "Canvas Width x DPR");
   console.log(canvas_2_m.height, "Canvas Width = Canvas Height");
   // Scale it down visually
   canvas_2_m.style.width = `${canvasWidth_2}px`;
   canvas_2_m.style.height = `${canvasWidth_2}px`;
-
   console.log(canvas_2_m.style.width, "Canvas Width CSS");
   console.log(canvas_2_m.style.height, "Canvas Height CSS");
-
   // Enable high-quality rendering
   context_2_m.imageSmoothingEnabled = true;
   context_2_m.imageSmoothingQuality = "high";
-
   // Create a temporary offscreen canvas for high-quality scaling
   const tempCanvas_2 = document.createElement("canvas");
   const tempCtx_2 = tempCanvas_2.getContext("2d");
-
   // Set the temporary canvas size 2x or 4x bigger for better scaling
   tempCanvas_2.width = img_2_m.width * 2; // Increase resolution
-
   console.log(tempCanvas_2.width, "Width of Temp Canvas");
-
   tempCanvas_2.height = img_2_m.height * 2;
   console.log(tempCanvas_2.height, "Height of Temp Canvas");
-
   // Draw the image at a higher resolution first
   tempCtx_2.drawImage(img_2_m, 0, 0, tempCanvas_2.width, tempCanvas_2.height);
-
   // Scale down the high-res image to the final canvas
   const scale_2 = Math.min(
     canvas_2_m.width / tempCanvas_2.width,
     canvas_2_m.height / tempCanvas_2.height
   );
-
   console.log(
     canvas_2_m.width / tempCanvas_2.width,
     "Canvas.width / TempCanvas.width"
@@ -472,16 +283,12 @@ function drawImageOnCanvas_2(img_2_m) {
     canvas_2_m.height / tempCanvas_2.height,
     "Canvas.width / TempCanvas.width"
   );
-
   const imageWidth_2 = tempCanvas_2.width * scale_2;
   console.log(imageWidth_2, "Width of Image");
-
   const imageHeight_2 = tempCanvas_2.height * scale_2;
   console.log(imageHeight_2, "Height of Image");
-
   const centerX_2 = (canvas_2_m.width - imageWidth_2) / 2;
   const centerY_2 = (canvas_2_m.height - imageHeight_2) / 2;
-
   // Now draw the high-res image to the final canvas
   context_2_m.drawImage(
     tempCanvas_2,
@@ -526,7 +333,6 @@ function drawImageOnCanvas_2(img_2_m) {
 window.addEventListener("resize", () => {
   loadImage_2_m(frames_2_m.currentIndex_2);
 });
-
 function startAnimation_2_m() {
   gsap.matchMedia().add(
     {
@@ -535,17 +341,14 @@ function startAnimation_2_m() {
     },
     (context) => {
       let { isMobile, isDesktop } = context.conditions;
-
       tl_TS_Product_M_2 = gsap.timeline({
         scrollTrigger: {
           trigger: "#uniq-TS-frame_2_m",
           start: isMobile ? "top 45%" : "top 30%",
           end: isMobile ? "top 0%" : "top 0%",
           scrub: 1,
-          // markers: true
         },
       });
-
       tl_TS_Product_M_2.to(frames_2_m, {
         currentIndex_2: frames_2_m.maxIndex_2,
         onUpdate: function () {
@@ -567,56 +370,46 @@ if (window.matchMedia("(max-width: 767px)").matches) {
       start: "top 55%",
       end: "top 50%",
       scrub: 1,
-    }
+    },
   });
 } else {
   gsap.to("#uniq-TS-frame_2_m", {
     opacity: 1,
-    scale: 1, 
+    scale: 1,
     scrollTrigger: {
       trigger: ".uniq-TS-product-container-m-2",
       start: "top 75%",
       end: "top 60%",
       scrub: 1,
-    }
+    },
   });
 }
-
 
 // CANVAS 3
 
 const canvas_3_m = document.querySelector("#uniq-TS-frame_3_m");
 const context_3_m = canvas_3_m.getContext("2d");
-
 const frames_3_m = {
   currentIndex_3: 0,
   maxIndex_3: 50,
 };
-
 let imagesLoaded_3_m = 0;
 const images_3_m = new Array(frames_3_m.maxIndex_3).fill(null);
-
 function preloadImages_3_m() {
   for (let i = 0; i < frames_3_m.maxIndex_3; i++) {
     const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BB${i
       .toString()
       .padStart(3, "0")}.png?v=1743756831`;
-
-    // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BB010.png?v=1743756831
-
     const img_3_m = new Image();
     img_3_m.src = imageUrl_3_m;
-
     img_3_m.onload = () => {
       images_3_m[i] = img_3_m;
       imagesLoaded_3_m++;
-
       if (imagesLoaded_3_m === frames_3_m.maxIndex_3) {
         loadImage_3_m(frames_3_m.currentIndex_3);
         startAnimation_3_m();
       }
     };
-
     img_3_m.onerror = () => {
       console.error(`Image failed to load: ${imageUrl_3_m}`);
     };
@@ -626,20 +419,16 @@ function preloadImages_3_m() {
 function loadImage_3_m(index) {
   if (index >= 0 && index < frames_3_m.maxIndex_3) {
     const img_3_m = images_3_m[index];
-
     if (!img_3_m || !img_3_m.complete) {
       console.warn(`Image at index ${index} is not ready yet.`);
       return;
     }
-
     drawImageOnCanvas_3(img_3_m);
     frames_3_m.currentIndex_3 = index;
   }
 }
-
 function drawImageOnCanvas_3(img_3_m) {
   if (!img_3_m) return;
-
   const isMobile = window.innerWidth <= 768;
   canvas_3_m.width = isMobile
     ? window.innerWidth / 1.01
@@ -647,21 +436,16 @@ function drawImageOnCanvas_3(img_3_m) {
   canvas_3_m.height = isMobile
     ? window.innerHeight / 2
     : window.innerHeight / 1.2;
-
   context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
   context_3_m.imageSmoothingEnabled = true;
   context_3_m.imageSmoothingQuality = "high";
-
   const canvasWidth_3 = canvas_3_m.width;
   const canvasHeight_3 = canvas_3_m.height;
-
   const maxSize_3 = Math.min(canvasWidth_3, canvasHeight_3);
   const imageWidth_3 = Math.min(maxSize_3, img_3_m.width);
   const imageHeight_3 = Math.min(maxSize_3, img_3_m.height);
-
   const centerX_3 = (canvasWidth_3 - imageWidth_3) / 2;
   const centerY_3 = canvasHeight_3 - imageHeight_3;
-
   context_3_m.drawImage(
     img_3_m,
     centerX_3,
@@ -683,17 +467,14 @@ function startAnimation_3_m() {
     },
     (context) => {
       let { isMobile, isDesktop } = context.conditions;
-
       tl_TS_Product_M_3 = gsap.timeline({
         scrollTrigger: {
           trigger: "#uniq-TS-frame_3_m",
           start: isMobile ? "top 45%" : "top 30%",
           end: isMobile ? "top 0%" : "top 0%",
           scrub: 1,
-          // markers: true
         },
       });
-
       tl_TS_Product_M_3.to(frames_3_m, {
         currentIndex_3: frames_3_m.maxIndex_3,
         onUpdate: function () {
@@ -715,22 +496,20 @@ if (window.matchMedia("(max-width: 767px)").matches) {
       start: "top 55%",
       end: "top 50%",
       scrub: 1,
-      // markers: true
-    }
+    },
   });
 } else {
   gsap.to("#uniq-TS-frame_3_m", {
     opacity: 1,
-    scale: 1, 
+    scale: 1,
     scrollTrigger: {
       trigger: ".uniq-TS-product-container-m-3",
       start: "top 75%",
       end: "top 60%",
       scrub: 1,
-    }
+    },
   });
 }
-
 
 new Swiper(".product-card-wrapper", {
   loop: true,
@@ -739,18 +518,15 @@ new Swiper(".product-card-wrapper", {
     delay: 2000,
     disableOnInteraction: false,
   },
-
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
     dynamicBullets: true,
   },
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -772,7 +548,6 @@ gsap.from(".uniq-TS-benefits-list li", {
   opacity: 0,
   delay: -1,
   stagger: 1,
-
   scrollTrigger: {
     trigger: ".uniq-TS-benefits-list",
     start: "top 75%",
@@ -789,13 +564,11 @@ gsap.from(".uniq-TS-canvas-benefits-list li", {
   opacity: 0,
   delay: -1,
   stagger: 1,
-
   scrollTrigger: {
     trigger: ".uniq-TS-product-container-m",
     start: "top -75%",
     end: "top -95%",
     scrub: 1,
-    // markers: true,
   },
 });
 
@@ -824,7 +597,6 @@ tl_order
       start: "top 80%",
       end: "top 50%",
       scrub: 1,
-      // markers: true,
     },
   })
   .to(".pre-order", {
@@ -848,7 +620,6 @@ gsap.matchMedia().add(
   },
   (context) => {
     let { isDesktop, isMobile } = context.conditions;
-
     gsap.from(".uniq-ani2-benefits-list li", {
       y: 10,
       duration: 0.5,
@@ -859,7 +630,6 @@ gsap.matchMedia().add(
         start: isDesktop ? "top 70%" : "top 50%",
         end: isDesktop ? "top 50%" : "top 35%",
         scrub: 1,
-        // markers: true,
       },
     });
   }
@@ -885,7 +655,6 @@ gsap.matchMedia().add(
         start: isDesktop ? "top 70%" : "top 50%",
         end: isDesktop ? "top 50%" : "top 35%",
         scrub: 1,
-        // markers: true,
       },
     });
   }

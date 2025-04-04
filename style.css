@@ -94,8 +94,8 @@
 }
 
 .uniq-TS-launch-page-container-m {
-  background-color: #dbe1ff;
-  background-image: linear-gradient(
+  background-color: #fff4eb;
+  /* background-image: linear-gradient(
     to right,
     #fdcea4,
     #fdc89b,
@@ -109,7 +109,7 @@
     #e89a5f,
     #e39459,
     #dd8e53
-  );
+  ); */
   scroll-behavior: smooth;
 
   display: none;
@@ -170,21 +170,7 @@
   font-family: "Poppins";
   position: sticky;
   top: 0%;
-  background-image: linear-gradient(
-    to right,
-    #fdcea4,
-    #fdc89b,
-    #fcc392,
-    #fcbd89,
-    #fbb780,
-    #f8b279,
-    #f6ac73,
-    #f3a76c,
-    #eda166,
-    #e89a5f,
-    #e39459,
-    #dd8e53
-  );
+  background-color: #fff4eb;
   color: #183457;
   /* border: 1px solid red; */
 }
@@ -195,21 +181,7 @@
   text-transform: uppercase;
   position: sticky;
   top: 45%;
-  background-image: linear-gradient(
-    to right,
-    #fdcea4,
-    #fdc89b,
-    #fcc392,
-    #fcbd89,
-    #fbb780,
-    #f8b279,
-    #f6ac73,
-    #f3a76c,
-    #eda166,
-    #e89a5f,
-    #e39459,
-    #dd8e53
-  );
+  background-color: #fff4eb;
   width: 100%;
   text-align: center;
 }

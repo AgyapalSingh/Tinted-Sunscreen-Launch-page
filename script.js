@@ -164,9 +164,11 @@ const images_1_m = [];
 
 function preloadImages_1_m() {
   for (let i = 0; i < frames_1_m.maxIndex_1; i++) {
-    const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TS${i
+    const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades${i
       .toString()
-      .padStart(4, "0")}.png?v=1743159947`;
+      .padStart(3, "0")}.png?v=1743752498`;
+
+      // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades025.png?v=1743752498
 
     const img_1_m = new Image();
     img_1_m.src = imageUrl_1_m;
@@ -312,10 +314,10 @@ function drawImageOnCanvas_1(img_1_m) {
   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
 
-  context_1_m.shadowColor = "rgba(0, 0, 0, 0.2)";
-  context_1_m.shadowBlur = 20;
-  context_1_m.shadowOffsetX = 10;
-  context_1_m.shadowOffsetY = 10;
+  // context_1_m.shadowColor = "rgba(0, 0, 0, 0.2)";
+  // context_1_m.shadowBlur = 20;
+  // context_1_m.shadowOffsetX = 10;
+  // context_1_m.shadowOffsetY = 10;
 
   // Now draw the high-res image to the final canvas
   context_1_m.drawImage(

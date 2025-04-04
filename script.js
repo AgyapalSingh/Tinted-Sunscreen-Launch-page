@@ -370,7 +370,7 @@ const context_2_m = canvas_2_m.getContext("2d");
 
 const frames_2_m = {
   currentIndex_2: 0,
-  maxIndex_2: 91,
+  maxIndex_2: 50,
 };
 
 let imagesLoaded_2_m = 0;
@@ -378,9 +378,12 @@ const images_2_m = [];
 
 function preloadImages_2_m() {
   for (var i = 0; i < frames_2_m.maxIndex_2; i++) {
-    const imageUrl_2_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/IvoryDawn${i
+    const imageUrl_2_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/ID${i
       .toString()
-      .padStart(4, "0")}.png?v=1743244663`;
+      .padStart(3, "0")}.png?v=1743755669`;
+
+      // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/ID075.png?v=1743755669
+
     const img_2_m = new Image();
 
     img_2_m.src = imageUrl_2_m;
@@ -559,7 +562,7 @@ const context_3_m = canvas_3_m.getContext("2d");
 
 const frames_3_m = {
   currentIndex_3: 0,
-  maxIndex_3: 90,
+  maxIndex_3: 50,
 };
 
 let imagesLoaded_3_m = 0;
@@ -567,9 +570,11 @@ const images_3_m = new Array(frames_3_m.maxIndex_3).fill(null);
 
 function preloadImages_3_m() {
   for (let i = 0; i < frames_3_m.maxIndex_3; i++) {
-    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BronzeBliss${i
+    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BB${i
       .toString()
-      .padStart(4, "0")}.png?v=1743247436`;
+      .padStart(3, "0")}.png?v=1743756831`;
+
+      // https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BB010.png?v=1743756831
 
     const img_3_m = new Image();
     img_3_m.src = imageUrl_3_m;

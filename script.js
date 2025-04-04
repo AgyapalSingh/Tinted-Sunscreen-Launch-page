@@ -563,7 +563,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     opacity: 1,
     scale: 1,
     scrollTrigger: {
-      trigger: "#uniq-TS-frame_2_m",
+      trigger: ".uniq-TS-product-container-m-2",
       start: "top 55%",
       end: "top 50%",
       scrub: 1,
@@ -574,7 +574,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     opacity: 1,
     scale: 1, 
     scrollTrigger: {
-      trigger: "#uniq-TS-frame_2_m",
+      trigger: ".uniq-TS-product-container-m-2",
       start: "top 75%",
       end: "top 60%",
       scrub: 1,
@@ -589,7 +589,7 @@ const canvas_3_m = document.querySelector("#uniq-TS-frame_3_m");
 const context_3_m = canvas_3_m.getContext("2d");
 
 const frames_3_m = {
-  currentIndex_3: 5,
+  currentIndex_3: 0,
   maxIndex_3: 50,
 };
 
@@ -676,21 +676,32 @@ window.addEventListener("resize", () => {
 });
 
 function startAnimation_3_m() {
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: "#uniq-TS-frame_3_m",
-        start: "top 25%",
-        end: "top -25%",
-        scrub: 1,
-      },
-    })
-    .to(frames_3_m, {
-      currentIndex_3: frames_3_m.maxIndex_3,
-      onUpdate: function () {
-        loadImage_3_m(Math.floor(frames_3_m.currentIndex_3));
-      },
-    });
+  gsap.matchMedia().add(
+    {
+      isMobile: "(max-width: 768px)",
+      isDesktop: "(min-width: 769px)",
+    },
+    (context) => {
+      let { isMobile, isDesktop } = context.conditions;
+
+      tl_TS_Product_M_3 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#uniq-TS-frame_3_m",
+          start: isMobile ? "top 45%" : "top 30%",
+          end: isMobile ? "top 0%" : "top 0%",
+          scrub: 1,
+          // markers: true
+        },
+      });
+
+      tl_TS_Product_M_3.to(frames_3_m, {
+        currentIndex_3: frames_3_m.maxIndex_3,
+        onUpdate: function () {
+          loadImage_3_m(Math.floor(frames_3_m.currentIndex_3));
+        },
+      });
+    }
+  );
 }
 
 preloadImages_3_m();
@@ -700,10 +711,11 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     opacity: 1,
     scale: 1,
     scrollTrigger: {
-      trigger: "#uniq-TS-frame_3_m",
+      trigger: ".uniq-TS-product-container-m-3",
       start: "top 55%",
       end: "top 50%",
       scrub: 1,
+      // markers: true
     }
   });
 } else {
@@ -711,7 +723,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     opacity: 1,
     scale: 1, 
     scrollTrigger: {
-      trigger: "#uniq-TS-frame_3_m",
+      trigger: ".uniq-TS-product-container-m-3",
       start: "top 75%",
       end: "top 60%",
       scrub: 1,

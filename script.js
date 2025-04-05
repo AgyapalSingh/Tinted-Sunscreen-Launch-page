@@ -26,7 +26,6 @@ const frames_1_m = {
 
 let imagesLoaded_1_m = 0;
 const images_1_m = [];
-
 function preloadImages_1_m() {
   for (let i = 0; i < frames_1_m.maxIndex_1; i++) {
     const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades${i
@@ -34,7 +33,6 @@ function preloadImages_1_m() {
       .padStart(3, "0")}.png?v=1743752498`;
     const img_1_m = new Image();
     img_1_m.src = imageUrl_1_m;
-
     img_1_m.onload = () => {
       imagesLoaded_1_m++;
       if (imagesLoaded_1_m === frames_1_m.maxIndex_1) {
@@ -58,102 +56,27 @@ function loadImage_1_m(index) {
   }
 }
 
-// 3-4-25
-
-// function drawImageOnCanvas_1(img_1_m) {
-//   const isMobile = window.innerWidth <= 768;
-//   console.log("Image Data");
-
-//   console.log(isMobile);
-
-//   canvas_1_m.width = isMobile ? window.innerWidth : window.innerWidth / 2;
-//   console.log(canvas_1_m.width, "Canvas Width");
-
-//   canvas_1_m.height = isMobile
-//     ? window.innerHeight / 2
-//     : window.innerHeight / 1.2;
-//   console.log(canvas_1_m.height, "Canvas Height");
-
-//   context_1_m.clearRect(0, 0, canvas_1_m.width, canvas_1_m.height);
-//   context_1_m.imageSmoothingEnabled = false;
-
-//   console.log(img_1_m.width, "Image Width");
-//   console.log(img_1_m.height, "Image Height");
-
-//   const scale = Math.min(
-//     canvas_1_m.width / img_1_m.width,
-//     canvas_1_m.height / img_1_m.height
-//   );
-//   console.log(canvas_1_m.width / img_1_m.width, "canvas.width / img.width");
-//   console.log(canvas_1_m.height / img_1_m.height, "canvas.height / img.height");
-
-//   const imageWidth_1 = img_1_m.width * scale;
-//   const imageHeight_1 = img_1_m.height * scale;
-//   console.log(imageWidth_1, "Image New Width");
-//   console.log(imageHeight_1, "Image New Height");
-
-//   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
-//   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
-
-//   context_1_m.drawImage(
-//     img_1_m,
-//     centerX_1,
-//     centerY_1,
-//     imageWidth_1,
-//     imageHeight_1
-//   );
-// }
-
-//  3-4-25 Acc. DPR
-
 function drawImageOnCanvas_1(img_1_m) {
   const isMobile = window.innerWidth <= 768;
-  // console.log("Image Data");
-  // console.log(isMobile);
   const devicePixelRatio = window.devicePixelRatio || 1;
-  // console.log(devicePixelRatio, "DPR");
   const canvasWidth = isMobile ? window.innerWidth : window.innerWidth / 2.5;
-  // console.log(canvasWidth, "Canvas Width");
-  // Set high-resolution canvas
   canvas_1_m.width = canvasWidth * devicePixelRatio;
   canvas_1_m.height = canvas_1_m.width;
-  // console.log(canvas_1_m.width, "Canvas Width x DPR");
-  // console.log(canvas_1_m.height, "Canvas Width = Canvas Height");
-  // Scale it down visually
   canvas_1_m.style.width = `${canvasWidth}px`;
   canvas_1_m.style.height = `${canvasWidth}px`;
-  // console.log(canvas_1_m.style.width, "Canvas Width CSS");
-  // console.log(canvas_1_m.style.height, "Canvas Height CSS");
-  // Enable high-quality rendering
   context_1_m.imageSmoothingEnabled = true;
   context_1_m.imageSmoothingQuality = "high";
-  // Create a temporary offscreen canvas for high-quality scaling
   const tempCanvas = document.createElement("canvas");
   const tempCtx = tempCanvas.getContext("2d");
-  // Set the temporary canvas size 2x or 4x bigger for better scaling
-  tempCanvas.width = img_1_m.width * 2; // Increase resolution
-  // console.log(tempCanvas.width, "Width of Temp Canvas");
+  tempCanvas.width = img_1_m.width * 2;
   tempCanvas.height = img_1_m.height * 2;
-  // console.log(tempCanvas.height, "Height of Temp Canvas");
-  // Draw the image at a higher resolution first
   tempCtx.drawImage(img_1_m, 0, 0, tempCanvas.width, tempCanvas.height);
-  // Scale down the high-res image to the final canvas
   const scale = Math.min(
     canvas_1_m.width / tempCanvas.width,
     canvas_1_m.height / tempCanvas.height
   );
-  // console.log(
-  //   canvas_1_m.width / tempCanvas.width,
-  //   "Canvas.width / TempCanvas.width"
-  // );
-  // console.log(
-  //   canvas_1_m.height / tempCanvas.height,
-  //   "Canvas.width / TempCanvas.width"
-  // );
   const imageWidth_1 = tempCanvas.width * scale;
-  // console.log(imageWidth_1, "Width of Image");
   const imageHeight_1 = tempCanvas.height * scale;
-  // console.log(imageHeight_1, "Height of Image");
   const centerX_1 = (canvas_1_m.width - imageWidth_1) / 2;
   const centerY_1 = (canvas_1_m.height - imageHeight_1) / 2;
   context_1_m.drawImage(
@@ -177,7 +100,6 @@ function startAnimation_m() {
     },
     (context) => {
       let { isMobile, isDesktop } = context.conditions;
-
       tl_TS_Product_M = gsap.timeline({
         scrollTrigger: {
           trigger: "#uniq-TS-frame_1_m",
@@ -186,7 +108,6 @@ function startAnimation_m() {
           scrub: 1,
         },
       });
-
       tl_TS_Product_M.to(frames_1_m, {
         currentIndex_1: frames_1_m.maxIndex_1,
         onUpdate: function () {
@@ -199,7 +120,7 @@ function startAnimation_m() {
 
 preloadImages_1_m();
 
-// CANVAS 2
+// CANVAS 2 ****************************************************************************************************************************************************************
 
 const canvas_2_m = document.querySelector("#uniq-TS-frame_2_m");
 const context_2_m = canvas_2_m.getContext("2d");
@@ -241,55 +162,27 @@ function loadImage_2_m(index) {
 
 function drawImageOnCanvas_2(img_2_m) {
   const isMobile = window.innerWidth <= 768;
-  // console.log("Image Data");
-  // console.log(isMobile);
   const devicePixelRatio_2 = window.devicePixelRatio || 1;
-  // console.log(devicePixelRatio_2, "DPR");
   const canvasWidth_2 = isMobile ? window.innerWidth : window.innerWidth / 2.5;
-  // console.log(canvasWidth_2, "Canvas Width");
-  // Set high-resolution canvas
   canvas_2_m.width = canvasWidth_2 * devicePixelRatio_2;
   canvas_2_m.height = canvas_2_m.width;
-  // console.log(canvas_2_m.width, "Canvas Width x DPR");
-  // console.log(canvas_2_m.height, "Canvas Width = Canvas Height");
-  // Scale it down visually
   canvas_2_m.style.width = `${canvasWidth_2}px`;
   canvas_2_m.style.height = `${canvasWidth_2}px`;
-  // console.log(canvas_2_m.style.width, "Canvas Width CSS");
-  // console.log(canvas_2_m.style.height, "Canvas Height CSS");
-  // Enable high-quality rendering
   context_2_m.imageSmoothingEnabled = true;
   context_2_m.imageSmoothingQuality = "high";
-  // Create a temporary offscreen canvas for high-quality scaling
   const tempCanvas_2 = document.createElement("canvas");
   const tempCtx_2 = tempCanvas_2.getContext("2d");
-  // Set the temporary canvas size 2x or 4x bigger for better scaling
-  tempCanvas_2.width = img_2_m.width * 2; // Increase resolution
-  // console.log(tempCanvas_2.width, "Width of Temp Canvas");
+  tempCanvas_2.width = img_2_m.width * 2; 
   tempCanvas_2.height = img_2_m.height * 2;
-  // console.log(tempCanvas_2.height, "Height of Temp Canvas");
-  // Draw the image at a higher resolution first
   tempCtx_2.drawImage(img_2_m, 0, 0, tempCanvas_2.width, tempCanvas_2.height);
-  // Scale down the high-res image to the final canvas
   const scale_2 = Math.min(
     canvas_2_m.width / tempCanvas_2.width,
     canvas_2_m.height / tempCanvas_2.height
   );
-  // console.log(
-  //   canvas_2_m.width / tempCanvas_2.width,
-  //   "Canvas.width / TempCanvas.width"
-  // );
-  // console.log(
-  //   canvas_2_m.height / tempCanvas_2.height,
-  //   "Canvas.width / TempCanvas.width"
-  // );
   const imageWidth_2 = tempCanvas_2.width * scale_2;
-  // console.log(imageWidth_2, "Width of Image");
   const imageHeight_2 = tempCanvas_2.height * scale_2;
-  // console.log(imageHeight_2, "Height of Image");
   const centerX_2 = (canvas_2_m.width - imageWidth_2) / 2;
   const centerY_2 = (canvas_2_m.height - imageHeight_2) / 2;
-  // Now draw the high-res image to the final canvas
   context_2_m.drawImage(
     tempCanvas_2,
     centerX_2,
@@ -298,37 +191,6 @@ function drawImageOnCanvas_2(img_2_m) {
     imageHeight_2
   );
 }
-
-// function drawImageOnCanvas_2(img_2_m) {
-//   const isMobile = window.innerWidth <= 768;
-//   canvas_2_m.width = isMobile
-//     ? window.innerWidth / 1.01
-//     : window.innerWidth / 2;
-//   canvas_2_m.height = isMobile
-//     ? window.innerHeight / 2
-//     : window.innerHeight / 1.2;
-
-//   context_2_m.clearRect(0, 0, canvas_2_m.width, canvas_2_m.height);
-//   context_2_m.imageSmoothingEnabled = true;
-//   context_2_m.imageSmoothingQuality = "high";
-
-//   const canvasWidth_2 = canvas_2_m.width;
-//   const canvasHeight_2 = canvas_2_m.height;
-
-//   const maxSize_2 = Math.min(canvasWidth_2 * 1, canvasHeight_2 * 1);
-//   const imageWidth_2 = Math.min(maxSize_2, img_2_m.width);
-//   const imageHeight_2 = Math.min(maxSize_2, img_2_m.height);
-//   const centerX_2 = (canvasWidth_2 - imageWidth_2) / 2;
-//   const centerY_2 = canvasHeight_2 - imageHeight_2;
-
-//   context_2_m.drawImage(
-//     img_2_m,
-//     centerX_2,
-//     centerY_2,
-//     imageWidth_2,
-//     imageHeight_2
-//   );
-// }
 
 window.addEventListener("resize", () => {
   loadImage_2_m(frames_2_m.currentIndex_2);
@@ -385,7 +247,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
   });
 }
 
-// CANVAS 3
+// CANVAS 3  ****************************************************************************************************************************************************************
 
 const canvas_3_m = document.querySelector("#uniq-TS-frame_3_m");
 const context_3_m = canvas_3_m.getContext("2d");

@@ -290,26 +290,30 @@ function loadImage_3_m(index) {
   }
 }
 function drawImageOnCanvas_3(img_3_m) {
-  if (!img_3_m) return;
   const isMobile = window.innerWidth <= 768;
-  canvas_3_m.width = isMobile
-    ? window.innerWidth / 1.01
-    : window.innerWidth / 2;
-  canvas_3_m.height = isMobile
-    ? window.innerHeight / 2
-    : window.innerHeight / 1.2;
-  context_3_m.clearRect(0, 0, canvas_3_m.width, canvas_3_m.height);
+  const devicePixelRatio_3 = window.devicePixelRatio || 1;
+  const canvasWidth_3 = isMobile ? window.innerWidth : window.innerWidth / 2.5;
+  canvas_3_m.width = canvasWidth_3 * devicePixelRatio_3;
+  canvas_3_m.height = canvas_3_m.width;
+  canvas_3_m.style.width = `${canvasWidth_3}px`;
+  canvas_3_m.style.height = `${canvasWidth_3}px`;
   context_3_m.imageSmoothingEnabled = true;
   context_3_m.imageSmoothingQuality = "high";
-  const canvasWidth_3 = canvas_3_m.width;
-  const canvasHeight_3 = canvas_3_m.height;
-  const maxSize_3 = Math.min(canvasWidth_3, canvasHeight_3);
-  const imageWidth_3 = Math.min(maxSize_3, img_3_m.width);
-  const imageHeight_3 = Math.min(maxSize_3, img_3_m.height);
-  const centerX_3 = (canvasWidth_3 - imageWidth_3) / 2;
-  const centerY_3 = canvasHeight_3 - imageHeight_3;
+  const tempCanvas_3 = document.createElement("canvas");
+  const tempCtx_3 = tempCanvas_3.getContext("2d");
+  tempCanvas_3.width = img_3_m.width * 2; 
+  tempCanvas_3.height = img_3_m.height * 2;
+  tempCtx_3.drawImage(img_3_m, 0, 0, tempCanvas_3.width, tempCanvas_3.height);
+  const scale_3 = Math.min(
+    canvas_3_m.width / tempCanvas_3.width,
+    canvas_3_m.height / tempCanvas_3.height
+  );
+  const imageWidth_3 = tempCanvas_3.width * scale_3;
+  const imageHeight_3 = tempCanvas_3.height * scale_3;
+  const centerX_3 = (canvas_3_m.width - imageWidth_3) / 2;
+  const centerY_3 = (canvas_3_m.height - imageHeight_3) / 2;
   context_3_m.drawImage(
-    img_3_m,
+    tempCanvas_3,
     centerX_3,
     centerY_3,
     imageWidth_3,

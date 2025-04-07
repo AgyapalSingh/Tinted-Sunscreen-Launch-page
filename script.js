@@ -259,9 +259,10 @@ let imagesLoaded_3_m = 0;
 const images_3_m = new Array(frames_3_m.maxIndex_3).fill(null);
 function preloadImages_3_m() {
   for (let i = 0; i < frames_3_m.maxIndex_3; i++) {
-    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BB${i
+    const imageUrl_3_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BronzeBliss${i
       .toString()
-      .padStart(3, "0")}.png?v=1743756831`;
+      .padStart(4, "0")}.png?v=1744020798`;
+
     const img_3_m = new Image();
     img_3_m.src = imageUrl_3_m;
     img_3_m.onload = () => {

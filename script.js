@@ -240,8 +240,8 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     scale: 1,
     scrollTrigger: {
       trigger: ".uniq-TS-product-container-m-2",
-      start: "top 75%",
-      end: "top 60%",
+      start: "top 40%",
+      end: "top 30%",
       scrub: 1,
     },
   });
@@ -370,8 +370,8 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     scale: 1,
     scrollTrigger: {
       trigger: ".uniq-TS-product-container-m-3",
-      start: "top 75%",
-      end: "top 60%",
+      start: "top 40%",
+      end: "top 30%",
       scrub: 1,
     },
   });

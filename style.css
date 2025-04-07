@@ -323,6 +323,16 @@
     justify-content: center;
     top: -10px;
   }
+
+  .uniq-TS-product-container-m-2 {
+    height: 150vh;
+    /* border: 1px saddlebrown solid; */
+  }
+
+  .uniq-ani2-benefit{
+    /* border: 1px solid red; */
+    height: 200vh;
+  }
 }
 /* Canvas 3 */
 
@@ -377,6 +387,16 @@
   .uniq-ani3-benefit{
     justify-content: center;
     top: -10px;
+  }
+
+  .uniq-TS-product-container-m-3 {
+    height: 150vh;
+    /* border: 1px saddlebrown solid; */
+  }
+
+  .uniq-ani3-benefit{
+    /* border: 1px solid red; */
+    height: 200vh;
   }
 }
 

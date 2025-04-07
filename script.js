@@ -243,6 +243,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
       start: "top 40%",
       end: "top 30%",
       scrub: 1,
+      // markers: true
     },
   });
 }

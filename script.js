@@ -103,8 +103,8 @@ function startAnimation_m() {
       tl_TS_Product_M = gsap.timeline({
         scrollTrigger: {
           trigger: "#uniq-TS-frame_1_m",
-          start: isMobile ? "top 45%" : "top 20%",
-          end: isMobile ? "top -25%" : "top -45%",
+          start: isMobile ? "top 35%" : "top 20%",
+          end: isMobile ? "top -35%" : "top -45%",
           scrub: 1,
         },
       });

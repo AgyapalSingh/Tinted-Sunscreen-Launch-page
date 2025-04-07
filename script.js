@@ -28,9 +28,9 @@ let imagesLoaded_1_m = 0;
 const images_1_m = [];
 function preloadImages_1_m() {
   for (let i = 0; i < frames_1_m.maxIndex_1; i++) {
-    const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedShades${i
+    const imageUrl_1_m = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/TintedSunscreen${i
       .toString()
-      .padStart(3, "0")}.png?v=1743752498`;
+      .padStart(4, "0")}.png?v=1744020408`;
     const img_1_m = new Image();
     img_1_m.src = imageUrl_1_m;
     img_1_m.onload = () => {
@@ -172,7 +172,7 @@ function drawImageOnCanvas_2(img_2_m) {
   context_2_m.imageSmoothingQuality = "high";
   const tempCanvas_2 = document.createElement("canvas");
   const tempCtx_2 = tempCanvas_2.getContext("2d");
-  tempCanvas_2.width = img_2_m.width * 2; 
+  tempCanvas_2.width = img_2_m.width * 2;
   tempCanvas_2.height = img_2_m.height * 2;
   tempCtx_2.drawImage(img_2_m, 0, 0, tempCanvas_2.width, tempCanvas_2.height);
   const scale_2 = Math.min(
@@ -301,7 +301,7 @@ function drawImageOnCanvas_3(img_3_m) {
   context_3_m.imageSmoothingQuality = "high";
   const tempCanvas_3 = document.createElement("canvas");
   const tempCtx_3 = tempCanvas_3.getContext("2d");
-  tempCanvas_3.width = img_3_m.width * 2; 
+  tempCanvas_3.width = img_3_m.width * 2;
   tempCanvas_3.height = img_3_m.height * 2;
   tempCtx_3.drawImage(img_3_m, 0, 0, tempCanvas_3.width, tempCanvas_3.height);
   const scale_3 = Math.min(

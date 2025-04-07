@@ -417,9 +417,10 @@ gsap.from(".uniq-TS-benefits-list li", {
   stagger: 1,
   scrollTrigger: {
     trigger: ".uniq-TS-benefits-list",
-    start: "top 75%",
-    end: "top 55%",
+    start: "top 95%",
+    end: "top 70%",
     scrub: 1,
+    // markers : true
   },
 });
 

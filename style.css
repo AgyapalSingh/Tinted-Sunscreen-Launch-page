@@ -1,62 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-.uniq-TS-Developer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Poppins";
-  height: 100px;
-  background-color: #183457;
-  scroll-behavior: smooth;
-}
-
-.uniq-TS-Developer h1 {
-  font-weight: 200;
-  font-size: 14px;
-  color: white;
-}
-
-.uniq-TS-Developer h1 a {
-  text-decoration: none;
-  color: white;
-  border-bottom: 1px solid white;
-}
-
-.uniq-TS-Canvas2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Poppins";
-  height: 200px;
-  background-color: #183457;
-}
-
-.uniq-TS-Canvas2 h1 {
-  font-weight: 300;
-  font-size: 16px;
-  color: white;
-  letter-spacing: 2px;
-}
-
-.uniq-TS-Canvas3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Poppins";
-  height: 200px;
-  background-color: #183457;
-}
-
-.uniq-TS-Canvas3 h1 {
-  font-weight: 300;
-  font-size: 16px;
-  color: white;
-  letter-spacing: 2px;
-}
-
 .loader-container {
   height: 100vh;
   display: flex;
@@ -95,23 +38,7 @@
 
 .uniq-TS-launch-page-container-m {
   background-color: #fff4eb;
-  /* background-image: linear-gradient(
-    to right,
-    #fdcea4,
-    #fdc89b,
-    #fcc392,
-    #fcbd89,
-    #fbb780,
-    #f8b279,
-    #f6ac73,
-    #f3a76c,
-    #eda166,
-    #e89a5f,
-    #e39459,
-    #dd8e53
-  ); */
   scroll-behavior: smooth;
-
   display: none;
 }
 
@@ -172,7 +99,6 @@
   top: 0%;
   background-color: #fff4eb;
   color: #183457;
-  /* border: 1px solid red; */
 }
 
 .uniq-TS-title-text-m h1 {
@@ -186,12 +112,10 @@
   text-align: center;
 }
 
-/* Canvas 1 */
 .uniq-TS-product-container-m {
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 
 #uniq-TS-frame_1_m {
@@ -200,7 +124,6 @@
   align-items: center;
   position: sticky;
   top: 0%;
-  /* border: 1px solid red; */
 }
 
 @media screen and (min-width: 769px) {
@@ -209,16 +132,13 @@
   }
   .uniq-TS-product-container-m {
     height: 200vh;
-    /* border: 1px solid rgb(25, 0, 255); */
   }
 
   .uniq-TS-canvas-benefits {
-    /* border: 1px solid red; */
     width: 23%;
   }
 
   .uniq-TS-canvas-benefits-list {
-    /* border: 1px solid red; */
     position: sticky;
     top: 30%;
     font-size: 16px;
@@ -235,7 +155,6 @@
   }
 }
 
-/* Products Benefits */
 
 .uniq-TS-product-benefits {
   display: flex;
@@ -247,7 +166,6 @@
 @media screen and (min-width: 769px) {
   .uniq-TS-benefits-container-m {
     display: none;
-    /* border: 1px saddlebrown red; */
   }
 }
 
@@ -270,13 +188,11 @@
   text-align: center;
 }
 
-/* Canvas 2 */
 
 .uniq-TS-product-container-m-2 {
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
   position: relative;
 }
 
@@ -288,11 +204,9 @@
   top: 15%;
   opacity: 0;
   scale: 0.1;
-  /* border: 1px solid red; */
 }
 
 .uniq-ani2-benefit{
-  /* border: 1px solid red; */
   height: 100vh;
   display: flex;
   justify-content: end;
@@ -303,7 +217,6 @@
 }
 
 .uniq-ani2-benefits-list{
-  /* border: 1px solid red; */
   width: 50%;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
@@ -326,21 +239,18 @@
 
   .uniq-TS-product-container-m-2 {
     height: 150vh;
-    /* border: 1px saddlebrown solid; */
   }
 
   .uniq-ani2-benefit{
-    /* border: 1px solid red; */
     height: 200vh;
   }
 }
-/* Canvas 3 */
+
 
 .uniq-TS-product-container-m-3 {
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
   position: relative;
 }
 
@@ -353,11 +263,9 @@
   top: 15%;
   opacity: 0;
   scale: 0.1;
-  /* border: 1px solid red; */
 }
 
 .uniq-ani3-benefit{
-  /* border: 1px solid red; */
   height: 100vh;
   display: flex;
   justify-content: start;
@@ -368,7 +276,6 @@
 }
 
 .uniq-ani3-benefits-list{
-  /* border: 1px solid red; */
   width: 50%;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
@@ -391,16 +298,14 @@
 
   .uniq-TS-product-container-m-3 {
     height: 150vh;
-    /* border: 1px saddlebrown solid; */
   }
 
   .uniq-ani3-benefit{
-    /* border: 1px solid red; */
     height: 200vh;
   }
 }
 
-/* INGREDIENTS */
+
 .uniq-TS-ingridiants-m {
   display: flex;
   padding: 30px 0px;
@@ -517,7 +422,6 @@
   }
 }
 
-/* 0. Pre-Order Div */
 .pre-order {
   width: 100%;
   height: 8vh;
@@ -530,7 +434,6 @@
   z-index: 10000;
 }
 
-/* 0.1 Preorder button */
 .pre-order a {
   text-decoration: none !important;
   padding: 10px 30px;
@@ -555,7 +458,6 @@
   animation: moveUpDownText 2s ease-in-out infinite;
 }
 
-/* 0.1 Preorder button */
 .explore span {
   text-decoration: none !important;
   color: white;

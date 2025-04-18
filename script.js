@@ -10,7 +10,6 @@ document.onreadystatechange = function () {
   }
 };
 
-// Mobile     ===================================================================================================================================================
 
 var tl_TS_Product_M = gsap.timeline();
 var tl_TS_Product_M_2 = gsap.timeline();
@@ -120,7 +119,6 @@ function startAnimation_m() {
 
 preloadImages_1_m();
 
-// CANVAS 2 ****************************************************************************************************************************************************************
 
 const canvas_2_m = document.querySelector("#uniq-TS-frame_2_m");
 const context_2_m = canvas_2_m.getContext("2d");
@@ -243,12 +241,10 @@ if (window.matchMedia("(max-width: 767px)").matches) {
       start: "top 40%",
       end: "top 30%",
       scrub: 1,
-      // markers: true
     },
   });
 }
 
-// CANVAS 3  ****************************************************************************************************************************************************************
 
 const canvas_3_m = document.querySelector("#uniq-TS-frame_3_m");
 const context_3_m = canvas_3_m.getContext("2d");
@@ -407,7 +403,6 @@ new Swiper(".product-card-wrapper", {
   },
 });
 
-// Benefits List Ani
 
 gsap.from(".uniq-TS-benefits-list li", {
   y: 10,
@@ -420,11 +415,9 @@ gsap.from(".uniq-TS-benefits-list li", {
     start: "top 95%",
     end: "top 70%",
     scrub: 1,
-    // markers : true
   },
 });
 
-// Canvas -  Benefits List Ani
 
 gsap.from(".uniq-TS-canvas-benefits-list li", {
   y: 10,
@@ -440,7 +433,6 @@ gsap.from(".uniq-TS-canvas-benefits-list li", {
   },
 });
 
-// Explore
 gsap.to(".explore", {
   opacity: 0,
   zIndex: -1,
@@ -452,7 +444,6 @@ gsap.to(".explore", {
   },
 });
 
-// Order-Button
 
 var tl_order = gsap.timeline();
 
@@ -461,9 +452,9 @@ tl_order
     opacity: 0,
     zIndex: -1,
     scrollTrigger: {
-      trigger: ".uniq-TS-product-ingredients",
-      start: "top 80%",
-      end: "top 50%",
+      trigger: ".uniq-TS-product-image-m",
+      start: "bottom 80%",
+      end: "bottom 50%",
       scrub: 1,
     },
   })
@@ -479,7 +470,6 @@ tl_order
     },
   });
 
-// Canvas 2 -  Benefits List Ani
 
 gsap.matchMedia().add(
   {
@@ -503,7 +493,6 @@ gsap.matchMedia().add(
   }
 );
 
-// Canvas 3 -  Benefits List Ani
 
 gsap.matchMedia().add(
   {
